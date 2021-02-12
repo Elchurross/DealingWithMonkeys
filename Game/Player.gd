@@ -22,7 +22,7 @@ func drinkBeer():
 	get_node("Kevin").play("drink")
 	health = maxHealth if health + beer > maxHealth else health + beer
 	cooldown = 40
-	health = maxTesson if tesson + 1 > maxTesson else tesson + 1
+	tesson = maxTesson if tesson + 1 > maxTesson else tesson + 1
 
 func hurt(damage):
 	if health <= damage:
