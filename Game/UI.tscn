@@ -1,0 +1,167 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/label_HP.png" type="Texture" id=2]
+[ext_resource path="res://Assets/lifebar_bg.png" type="Texture" id=3]
+[ext_resource path="res://Assets/label_HP_bg.png" type="Texture" id=4]
+[ext_resource path="res://Assets/lifebar_fill.png" type="Texture" id=5]
+[ext_resource path="res://Assets/PngItem_1119830.png" type="Texture" id=6]
+[ext_resource path="res://Assets/bombs_icon.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+extra_spacing_bottom = 2
+font_data = ExtResource( 1 )
+
+[node name="GUI" type="MarginContainer"]
+anchor_right = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 73.0
+
+[node name="Bars" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 776.0
+margin_bottom = 53.0
+size_flags_horizontal = 3
+
+[node name="Bar" type="HBoxContainer" parent="HBoxContainer/Bars"]
+margin_right = 776.0
+margin_bottom = 53.0
+
+[node name="HPCount" type="MarginContainer" parent="HBoxContainer/Bars/Bar"]
+margin_right = 100.0
+margin_bottom = 53.0
+
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/Bar/HPCount"]
+margin_right = 100.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 100, 40 )
+texture = ExtResource( 4 )
+
+[node name="Number" type="Label" parent="HBoxContainer/Bars/Bar/HPCount/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 4.0
+margin_right = -11.0
+custom_fonts/font = SubResource( 1 )
+text = "10"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="TextureRect" parent="HBoxContainer/Bars/Bar/HPCount/Background"]
+margin_left = 5.33936
+margin_top = 4.67194
+margin_right = 55.3394
+margin_bottom = 44.6719
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gauge" type="TextureProgress" parent="HBoxContainer/Bars/Bar"]
+margin_left = 104.0
+margin_right = 500.0
+margin_bottom = 53.0
+step = 10.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 5 )
+
+[node name="Counters" type="HBoxContainer" parent="HBoxContainer"]
+margin_left = 780.0
+margin_right = 880.0
+margin_bottom = 53.0
+
+[node name="TESSONCount2" type="MarginContainer" parent="HBoxContainer/Counters"]
+margin_right = 100.0
+margin_bottom = 53.0
+
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/Counters/TESSONCount2"]
+margin_right = 100.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 100, 40 )
+texture = ExtResource( 4 )
+
+[node name="Number" type="Label" parent="HBoxContainer/Counters/TESSONCount2/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 8.0
+margin_right = -52.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 1 )
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="TextureRect" parent="HBoxContainer/Counters/TESSONCount2/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.2142
+margin_top = 5.65827
+margin_right = -4.78583
+margin_bottom = -5.34174
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AMMOCount" type="HBoxContainer" parent="HBoxContainer"]
+margin_left = 884.0
+margin_right = 984.0
+margin_bottom = 53.0
+
+[node name="Count2" type="MarginContainer" parent="HBoxContainer/AMMOCount"]
+margin_right = 100.0
+margin_bottom = 53.0
+
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/AMMOCount/Count2"]
+margin_right = 100.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 100, 40 )
+texture = ExtResource( 4 )
+
+[node name="Number" type="Label" parent="HBoxContainer/AMMOCount/Count2/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = 8.0
+margin_right = -52.0
+margin_bottom = -1.0
+custom_fonts/font = SubResource( 1 )
+text = "10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="TextureRect" parent="HBoxContainer/AMMOCount/Count2/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 45.2142
+margin_top = 5.65827
+margin_right = -4.78583
+margin_bottom = -5.34174
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
