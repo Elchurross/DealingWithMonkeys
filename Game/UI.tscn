@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/label_HP.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/lifebar_fill.png" type="Texture" id=5]
 [ext_resource path="res://Assets/PngItem_1119830.png" type="Texture" id=6]
 [ext_resource path="res://Assets/bombs_icon.png" type="Texture" id=7]
+[ext_resource path="res://UI.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 29
@@ -19,6 +20,7 @@ custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
 custom_constants/margin_bottom = 20
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -62,9 +64,9 @@ __meta__ = {
 }
 
 [node name="Title" type="TextureRect" parent="HBoxContainer/Bars/Bar/HPCount/Background"]
-margin_left = 5.33936
+margin_left = -1.73172
 margin_top = 4.67194
-margin_right = 55.3394
+margin_right = 48.2683
 margin_bottom = 44.6719
 texture = ExtResource( 2 )
 stretch_mode = 4

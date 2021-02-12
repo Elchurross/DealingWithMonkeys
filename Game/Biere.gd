@@ -34,3 +34,11 @@ func _process(delta):
 		self.position = self.position.move_toward(self.transform.y, speed * delta)
 
 	pass
+
+
+func _on_Area2D_body_entered(body):
+	
+	if (body.get_name() == "Player"):
+		var player = get_owner().get_node("Player")
+		player.drinkBeer()
+	pass # Replace with function body.
