@@ -12,6 +12,8 @@ var velocity : Vector2 =  Vector2.ZERO
 onready var sprite : AnimatedSprite = get_node("Kevin")
 
 var jumping : bool = false
+var gunBullets : int = 0
+var cooldown : int = 0
 
 func drinkBeer():
 	get_node("Kevin").play("drink")
@@ -26,6 +28,11 @@ func hurt(damage):
 		get_node("Kevin").play("hurt")
 
 func _physics_process(delta):
+	if cooldown > 0:
+		velocity = move_and_slide(velocity, Vector2.UP)
+		velocity.y += gravity * delta
+		cooldown -= 1
+		return
 	velocity.x = 0
 	
 	if  Input.is_action_pressed("move_left"):
@@ -37,9 +44,15 @@ func _physics_process(delta):
 	if is_on_floor():
 		jumping = false
 		if velocity.x == 0:
-			get_node("Kevin").play("idle")
+			if gunBullets <= 0:
+				get_node("Kevin").play("idle")
+			else:
+				get_node("Kevin").play("idle_gun")
 		else:
-			get_node("Kevin").play("walk")
+			if gunBullets <= 0:
+				get_node("Kevin").play("walk")
+			else:
+				get_node("Kevin").play("walk_gun")
 	
 	velocity.y += gravity * delta
 	
@@ -49,6 +62,10 @@ func _physics_process(delta):
 		jumping	= true
 	if !is_on_floor() and !jumping:
 		get_node("Kevin").play("fall")
+	
+	if Input.is_action_just_pressed("punch"):
+		get_node("Kevin").play("punch")
+		cooldown = 10
 	
 	if velocity.x < 0:
 		sprite.flip_h = true
