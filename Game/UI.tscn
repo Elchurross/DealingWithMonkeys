@@ -38,17 +38,17 @@ size_flags_horizontal = 3
 margin_right = 776.0
 margin_bottom = 53.0
 
-[node name="Count" type="MarginContainer" parent="HBoxContainer/Bars/Bar"]
+[node name="HPCount" type="MarginContainer" parent="HBoxContainer/Bars/Bar"]
 margin_right = 100.0
 margin_bottom = 53.0
 
-[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/Bar/Count"]
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/Bars/Bar/HPCount"]
 margin_right = 100.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 100, 40 )
 texture = ExtResource( 4 )
 
-[node name="Number" type="Label" parent="HBoxContainer/Bars/Bar/Count/Background"]
+[node name="Number" type="Label" parent="HBoxContainer/Bars/Bar/HPCount/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 4.0
@@ -61,7 +61,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="TextureRect" parent="HBoxContainer/Bars/Bar/Count/Background"]
+[node name="Title" type="TextureRect" parent="HBoxContainer/Bars/Bar/HPCount/Background"]
 margin_left = 5.33936
 margin_top = 4.67194
 margin_right = 55.3394
@@ -85,19 +85,17 @@ margin_left = 780.0
 margin_right = 880.0
 margin_bottom = 53.0
 
-[node name="Count2" type="MarginContainer" parent="HBoxContainer/Counters"]
-margin_left = 104.0
-margin_top = 60.0
-margin_right = 204.0
-margin_bottom = 113.0
-
-[node name="Background" type="NinePatchRect" parent="HBoxContainer/Counters/Count2"]
+[node name="TESSONCount2" type="MarginContainer" parent="HBoxContainer/Counters"]
 margin_right = 100.0
-margin_bottom = 52.0
+margin_bottom = 53.0
+
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/Counters/TESSONCount2"]
+margin_right = 100.0
+margin_bottom = 53.0
 rect_min_size = Vector2( 100, 40 )
 texture = ExtResource( 4 )
 
-[node name="Number" type="Label" parent="HBoxContainer/Counters/Count2/Background"]
+[node name="Number" type="Label" parent="HBoxContainer/Counters/TESSONCount2/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 3.0
@@ -112,7 +110,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="TextureRect" parent="HBoxContainer/Counters/Count2/Background"]
+[node name="Title" type="TextureRect" parent="HBoxContainer/Counters/TESSONCount2/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 45.2142
@@ -125,22 +123,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Counters2" type="HBoxContainer" parent="HBoxContainer"]
+[node name="AMMOCount" type="HBoxContainer" parent="HBoxContainer"]
 margin_left = 884.0
 margin_right = 984.0
 margin_bottom = 53.0
 
-[node name="Count2" type="MarginContainer" parent="HBoxContainer/Counters2"]
+[node name="Count2" type="MarginContainer" parent="HBoxContainer/AMMOCount"]
 margin_right = 100.0
 margin_bottom = 53.0
 
-[node name="Background" type="NinePatchRect" parent="HBoxContainer/Counters2/Count2"]
+[node name="Background" type="NinePatchRect" parent="HBoxContainer/AMMOCount/Count2"]
 margin_right = 100.0
 margin_bottom = 53.0
 rect_min_size = Vector2( 100, 40 )
 texture = ExtResource( 4 )
 
-[node name="Number" type="Label" parent="HBoxContainer/Counters2/Count2/Background"]
+[node name="Number" type="Label" parent="HBoxContainer/AMMOCount/Count2/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 3.0
@@ -155,7 +153,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="TextureRect" parent="HBoxContainer/Counters2/Count2/Background"]
+[node name="Title" type="TextureRect" parent="HBoxContainer/AMMOCount/Count2/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 45.2142
