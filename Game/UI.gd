@@ -27,7 +27,7 @@ func _process(delta):
 	var number_label_tesson = get_node("HBoxContainer/Counters/TESSONCount2/Background/Number")
 	var bar = get_node("HBoxContainer/Bars/Bar/Gauge")
 	var player = get_owner().get_node("Player")
-	print(player.health)
+
 	bar.value = player.health
 	number_label_hp.text = str(player.maxHealth)
 	number_label_tesson.text = str(player.tesson)
