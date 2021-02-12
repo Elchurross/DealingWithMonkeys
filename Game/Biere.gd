@@ -41,4 +41,5 @@ func _on_Area2D_body_entered(body):
 	if (body.get_name() == "Player"):
 		var player = get_owner().get_node("Player")
 		player.drinkBeer()
+		queue_free()
 	pass # Replace with function body.

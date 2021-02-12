@@ -13,12 +13,16 @@ onready var sprite : AnimatedSprite = get_node("Kevin")
 
 var jumping : bool = false
 var gunBullets : int = 0
+var tesson : int = 5
+var maxTesson : int = 10
+
 var cooldown : int = 0
 
 func drinkBeer():
 	get_node("Kevin").play("drink")
-	print("here")
 	health = maxHealth if health + beer > maxHealth else health + beer
+	cooldown = 40
+	health = maxTesson if tesson + 1 > maxTesson else tesson + 1
 
 func hurt(damage):
 	if health <= damage:
@@ -29,12 +33,12 @@ func hurt(damage):
 		get_node("Kevin").play("hurt")
 
 func _physics_process(delta):
+	velocity.x = 0
 	if cooldown > 0:
 		velocity = move_and_slide(velocity, Vector2.UP)
 		velocity.y += gravity * delta
 		cooldown -= 1
 		return
-	velocity.x = 0
 	
 	if  Input.is_action_pressed("move_left"):
 		velocity.x -= speed
