@@ -17,6 +17,7 @@ var cooldown : int = 0
 
 func drinkBeer():
 	get_node("Kevin").play("drink")
+	print("here")
 	health = maxHealth if health + beer > maxHealth else health + beer
 
 func hurt(damage):
