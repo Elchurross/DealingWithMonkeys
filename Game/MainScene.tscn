@@ -1,21 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Camera.tscn" type="PackedScene" id=3]
 
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 419.16, 206.06 )
 
+[node name="Camera2D" parent="Player" instance=ExtResource( 3 )]
+position = Vector2( 12.84, 57.9396 )
+
 [node name="Tile" parent="." instance=ExtResource( 1 )]
-position = Vector2( 392, 264 )
+position = Vector2( 368, 264 )
 
 [node name="Tile2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 408, 264 )
+position = Vector2( 832, 264 )
+
+[node name="Tile5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1088, 264 )
 
 [node name="Tile3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 424, 264 )
+position = Vector2( 608, 264 )
 
 [node name="Tile4" parent="." instance=ExtResource( 1 )]
-position = Vector2( 440, 264 )
+position = Vector2( 104, 264 )

@@ -17,20 +17,22 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("move_right"):
 		velocity.x += speed
 	
-	if velocity.x == 0:
-		get_node("Kevin").stop()
-		get_node("Kevin").play("idle")
-	else:
-		get_node("Kevin").play("walk")
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
+	if is_on_floor():
+		if velocity.x == 0:
+			get_node("Kevin").play("idle")
+		else:
+			get_node("Kevin").play("walk")
 	
 	velocity.y += gravity * delta
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y -= jumpForce
+		get_node("Kevin").play("jump")
 	
 	if velocity.x < 0:
 		sprite.flip_h = true
 	elif velocity.x > 0:
 		sprite.flip_h = false
+	
