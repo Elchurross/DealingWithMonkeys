@@ -9,17 +9,16 @@ reference_path = "res://menu.tscn"
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 25.5228, 15.0526 )
+rect_scale = Vector2( 28.5669, 16.8172 )
 color = Color( 0.12549, 0.0666667, 0.0666667, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
-rect_scale = Vector2( 1.36783, 1.57128 )
+margin_right = 750.0
+margin_bottom = 371.0
+rect_scale = Vector2( 1.51041, 1.54671 )
 text = " Hi, dear player
 
 
@@ -29,7 +28,8 @@ text = " Hi, dear player
 
 
 
-This game  was created during a game jam(54h) you can find your contact in the Readme from github 
+This game  was created during a game jam(54h) you can find 
+our contact in the Readme from github 
 
 
 Have fun
@@ -47,6 +47,3 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 513.919, 302.658 )

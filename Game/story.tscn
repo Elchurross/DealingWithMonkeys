@@ -9,15 +9,16 @@ reference_path = "res://MainScene.tscn"
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 25.3511, 14.9507 )
+rect_scale = Vector2( 32.9783, 19.3323 )
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Node" type="Node2D" parent="."]
 light_mask = 2
+position = Vector2( 7.07104, -1.41418 )
+scale = Vector2( 0.988681, 0.99522 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -27,7 +28,7 @@ margin_left = -0.4
 margin_top = 336.0
 margin_right = 999.6
 margin_bottom = 537.0
-rect_scale = Vector2( 1.0267, 2.14598 )
+rect_scale = Vector2( 1.07915, 2.1452 )
 text = "Let me tell you a story.
 
 It is the story of a random guy named Kevin, from Montpellier, France.
@@ -55,7 +56,7 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 margin_right = 300.0
 margin_bottom = 14.0
-rect_scale = Vector2( 3.39852, 2.38256 )
+rect_scale = Vector2( 3.91381, 2.50844 )
 text = "press \"space\" for skip"
 align = 1
 __meta__ = {

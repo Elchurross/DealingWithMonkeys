@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _process(delta:float) -> void:
 	if !pause:
-		var up:bool = Input.is_action_just_pressed("jump")
+		var up:bool = Input.is_action_just_pressed("punch")
 
 		if up:
 			if(reference_path != ""):
