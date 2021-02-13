@@ -12,11 +12,7 @@
 [ext_resource path="res://Sprites/kevin_idle_gun.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/kevin_walk_gun.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/kevin_walk_gun2.png" type="Texture" id=12]
-<<<<<<< HEAD
-[ext_resource path="res://Sprites/kevin_joint.png" type="Texture" id=13]
-=======
 [ext_resource path="res://Sound/gun sound.wav" type="AudioStream" id=13]
->>>>>>> 2190e18d0fca11464a28be1ed02d4393543d4633
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.83318, 34.7988 )
@@ -27,11 +23,6 @@ animations = [ {
 "loop": false,
 "name": "idle",
 "speed": 0.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "joint",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
@@ -74,7 +65,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Ennemy" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -83,13 +74,6 @@ shape = SubResource( 1 )
 
 [node name="Kevin" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-<<<<<<< HEAD
-animation = "joint"
-
-[node name="Cooldown" type="Timer" parent="."]
-
-[node name="Boost" type="Timer" parent="."]
-=======
 animation = "walk_gun"
 
 [node name="GunSound" type="AudioStreamPlayer2D" parent="."]
@@ -97,4 +81,3 @@ stream = ExtResource( 13 )
 volume_db = -13.125
 pitch_scale = 2.03
 attenuation = 1.56918
->>>>>>> 2190e18d0fca11464a28be1ed02d4393543d4633
