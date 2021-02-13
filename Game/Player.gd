@@ -13,7 +13,7 @@ var velocity : Vector2 =  Vector2.ZERO
 onready var sprite : AnimatedSprite = get_node("Kevin")
 
 var jumping : bool = false
-var ammo : int = 40
+var ammo : int = 0
 var tesson : int = 5
 var maxTesson : int = 10
 
@@ -24,6 +24,9 @@ func drinkBeer():
 	health = maxHealth if health + beer > maxHealth else health + beer
 	cooldown = 40
 	tesson = maxTesson if tesson + 1 > maxTesson else tesson + 1
+	
+func addAmmo(ammount):
+	ammo += ammount
 
 func hurt(damage):
 	if health <= damage:
@@ -77,6 +80,7 @@ func _physics_process(delta):
 			var bullet = Bullet.instance()
 			owner.add_child(bullet)
 			bullet.transform = get_node("Kevin").global_transform
+			ammo -= 1
 	
 	if velocity.x < 0:
 		sprite.flip_h = true
