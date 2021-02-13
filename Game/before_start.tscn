@@ -1,13 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://before_start.gd" type="Script" id=1]
+[ext_resource path="res://Assets/HiThereTitle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Hithere2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Continue.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 reference_path = "res://menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 40.0
+margin_right = 42.0
 margin_bottom = 40.0
 rect_scale = Vector2( 28.5669, 16.8172 )
 color = Color( 0.12549, 0.0666667, 0.0666667, 1 )
@@ -15,35 +18,56 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_right = 750.0
-margin_bottom = 371.0
-rect_scale = Vector2( 1.51041, 1.54671 )
-text = " Hi, dear player
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 2.0
+margin_top = -1.0
+margin_right = 1022.0
+margin_bottom = 398.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_bottom = 399.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer"]
 
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
+margin_left = 172.0
+margin_top = -48.0
+margin_right = 1672.0
+margin_bottom = 352.0
+rect_scale = Vector2( 0.489623, 0.615024 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
+margin_left = 79.2469
+margin_top = 188.255
+margin_right = 1579.25
+margin_bottom = 588.255
+rect_scale = Vector2( 0.592658, 0.57515 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-
-This game  was created during a game jam(54h) you can find 
-our contact in the Readme from github 
-
-
-Have fun
-
-
-
-
-
-
-
-
-press \"SPACE\" for play"
-align = 1
-uppercase = true
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
+margin_left = 246.861
+margin_top = 422.113
+margin_right = 1746.86
+margin_bottom = 822.113
+rect_scale = Vector2( 0.363859, 0.342882 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
