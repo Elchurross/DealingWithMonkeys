@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Tile.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -10,16 +10,27 @@
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://MainScene.gd" type="Script" id=9]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://tilesetSolChambre.tres" type="TileSet" id=11]
+[ext_resource path="res://tilesetMurChambre.tres" type="TileSet" id=12]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 9 )
 reference_path = "res://menu.tscn"
 
-[node name="TileMap" parent="." instance=ExtResource( 7 )]
-cell_size = Vector2( 32, 64 )
+[node name="MurChambre" parent="." instance=ExtResource( 7 )]
+position = Vector2( 40, -50 )
+scale = Vector2( 2.2, 2.1 )
+tile_set = ExtResource( 12 )
+tile_data = PoolIntArray( 65534, 2, 0, 65535, 1, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 12, 2, 0, 13, 2, 0, 14, 2, 0, 131070, 8, 0, 131071, 11, 0, 65536, 11, 0, 65537, 11, 0, 65538, 6, 0, 65539, 6, 0, 65540, 6, 0, 65541, 6, 0, 65542, 6, 0, 65543, 8, 0, 65544, 8, 0, 65545, 8, 0, 65546, 6, 0, 65547, 6, 0, 65548, 6, 0, 65549, 8, 0, 65550, 8, 0, 196606, 4, 0, 196607, 4, 0, 131072, 4, 0, 131073, 7, 0, 131074, 11, 0, 131075, 11, 0, 131076, 4, 0, 131077, 8, 0, 131078, 4, 0, 131079, 4, 0, 131080, 4, 0, 131081, 4, 0, 131082, 7, 0, 131083, 4, 0, 131084, 7, 0, 131085, 4, 0, 262142, 8, 0, 262143, 4, 0, 196608, 4, 0, 196609, 7, 0, 196610, 4, 0, 196611, 7, 0, 196612, 11, 0, 196613, 11, 0, 196614, 11, 0, 196615, 7, 0, 196616, 8, 0, 196617, 4, 0, 196618, 4, 0, 196619, 4, 0, 196620, 8, 0, 196621, 4, 0, 327678, 4, 0, 327679, 4, 0, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 262147, 7, 0, 262148, 4, 0, 262149, 4, 0, 262150, 4, 0, 262151, 11, 0, 262152, 11, 0, 262153, 7, 0, 262154, 4, 0, 262155, 4, 0, 262156, 4, 0, 262157, 4, 0, 393214, 4, 0, 393215, 8, 0, 327680, 4, 0, 327681, 8, 0, 327682, 4, 0, 327683, 4, 0, 327684, 8, 0, 327685, 4, 0, 327686, 8, 0, 327687, 8, 0, 327688, 11, 0, 327689, 11, 0, 327690, 11, 0, 327691, 4, 0, 327692, 8, 0, 327693, 4, 0, 458750, 7, 0, 458751, 7, 0, 393216, 7, 0, 393217, 7, 0, 393218, 7, 0, 393219, 7, 0, 393220, 7, 0, 393221, 7, 0, 393222, 7, 0, 393223, 7, 0, 393224, 7, 0, 393225, 7, 0, 393226, 7, 0, 393227, 11, 0, 393228, 11, 0, 393229, 7, 0 )
+
+[node name="SolChambre" parent="." instance=ExtResource( 7 )]
+position = Vector2( 44.9492, -38.956 )
+z_as_relative = false
+tile_set = ExtResource( 11 )
+tile_data = PoolIntArray( 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 143.396, 401.014 )
+position = Vector2( 68.4436, 282.296 )
 scale = Vector2( 1.57462, 1.32562 )
 
 [node name="Camera2D" parent="Player" instance=ExtResource( 3 )]
@@ -38,16 +49,14 @@ margin_right = -11.0
 margin_bottom = 106.0
 rect_rotation = -0.0582678
 
-[node name="Tile" parent="." instance=ExtResource( 1 )]
-position = Vector2( 359.267, 500.419 )
-scale = Vector2( 14.6491, -1.70938 )
-
 [node name="Tile2" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( 965.203, 572.681 )
 rotation = 1.5708
 scale = Vector2( 14.6491, -0.856721 )
 
 [node name="Tile3" parent="." instance=ExtResource( 1 )]
+visible = false
 position = Vector2( -100.691, 588.682 )
 rotation = 1.5708
 scale = Vector2( 14.6491, -0.856721 )
@@ -75,5 +84,5 @@ collision_layer = 2147483648
 collision_mask = 0
 
 [node name="Ennemy" parent="." instance=ExtResource( 10 )]
-position = Vector2( 776, 392 )
+position = Vector2( 777.888, 341.031 )
 scale = Vector2( 1.4, 1.4 )

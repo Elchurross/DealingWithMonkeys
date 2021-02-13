@@ -10,36 +10,40 @@ script = ExtResource( 1 )
 reference_path = "res://menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 42.0
-margin_bottom = 40.0
-rect_scale = Vector2( 28.5669, 16.8172 )
+margin_right = 1021.0
+margin_bottom = 600.0
 color = Color( 0.12549, 0.0666667, 0.0666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_left = 2.0
-margin_top = -1.0
-margin_right = 1022.0
-margin_bottom = 398.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1021.0
+margin_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_bottom = 399.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 1021.0
+margin_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 
-[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
 margin_left = 172.0
 margin_top = -48.0
 margin_right = 1672.0
@@ -50,7 +54,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
 margin_left = 79.2469
 margin_top = 188.255
 margin_right = 1579.25
@@ -61,7 +65,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
 margin_left = 246.861
 margin_top = 422.113
 margin_right = 1746.86

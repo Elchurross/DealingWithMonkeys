@@ -14,7 +14,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	var player = get_owner().get_node("Player")
-	global_position.y = 250
+	global_position.y = 190
 	global_position.x = player.get_global_position().x
 
 	pass
