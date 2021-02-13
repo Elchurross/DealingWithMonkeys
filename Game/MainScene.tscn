@@ -18,12 +18,16 @@ position = Vector2( 404.024, 417.966 )
 position = Vector2( 12.84, 57.9396 )
 process_mode = 0
 smoothing_speed = 10.0
+editor_draw_screen = false
 
-[node name="GUI" parent="Player/Camera2D" instance=ExtResource( 4 )]
-margin_left = -512.0
-margin_top = -304.0
-margin_right = 510.0
-margin_bottom = -211.0
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+
+[node name="GUI" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 4 )]
+margin_left = 17.0
+margin_top = 13.0
+margin_right = -11.0
+margin_bottom = 106.0
+rect_rotation = -0.0582678
 
 [node name="Tile" parent="." instance=ExtResource( 1 )]
 position = Vector2( 208.823, 491.943 )
@@ -35,7 +39,7 @@ rotation = 1.5708
 scale = Vector2( 14.6491, -0.856721 )
 
 [node name="Tile3" parent="." instance=ExtResource( 1 )]
-position = Vector2( -100.691, 596.619 )
+position = Vector2( -100.691, 588.682 )
 rotation = 1.5708
 scale = Vector2( 14.6491, -0.856721 )
 
