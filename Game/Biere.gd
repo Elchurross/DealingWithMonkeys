@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
@@ -15,26 +15,28 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	var raycast_node = get_node("RayCast2D")
 	if raycast_node.is_colliding():
 		var distance =  self.position.distance_to(raycast_node.get_collision_point())
-		if (distance < 20):
+		print(distance)
+		if (distance < 26):
 			isUp = true
 			isDown = false
-		elif (distance > 27 and isUp == true):
+		elif (distance > 35 and isUp == true):
 			isUp = false
 			isDown = true
 	else:
 		isDown = true
 		isUp = false
+	print(isUp)
+	print(isDown)
 	if (isDown) :
-		self.position = self.position.move_toward(self.transform.y, -speed * delta)
+		move_and_slide(Vector2(0,1) * speed)
 	elif (isUp) :
-		self.position = self.position.move_toward(self.transform.y, speed * delta)
+		move_and_slide(Vector2(0,-1) * speed)
 
 	pass
-
 
 func _on_Area2D_body_entered(body):
 	
