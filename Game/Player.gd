@@ -49,12 +49,15 @@ func hurt(damage):
 
 func _physics_process(delta):
 	velocity.x = 0
-	if !cooldown.is_stopped():
+	if !cooldown.is_stopped() or health <= 0:
 		velocity = move_and_slide(velocity, Vector2.UP)
 		velocity.y += gravity * delta
 		return
 	
+	get_node("PunchArea/CollisionShape2D").disabled = true
+	
 	if  Input.is_action_pressed("move_left"):
+		
 		velocity.x -= speed
 	elif Input.is_action_pressed("move_right"):
 		velocity.x += speed
@@ -84,6 +87,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("punch"):
 		if ammo == 0:
+			get_node("PunchArea/CollisionShape2D").disabled = false
 			get_node("Kevin").play("punch")
 			cooldown.start(0.2)
 		else:
@@ -94,9 +98,12 @@ func _physics_process(delta):
 			ammo -= 1
 	
 	if velocity.x < 0:
-		sprite.flip_h = true
+		if !flip:
+			sprite.flip_h = true
+			get_node("PunchArea").scale.x *= -1
 		flip = true
 	elif velocity.x > 0:
-		sprite.flip_h = false
+		if flip:
+			sprite.flip_h = false
+			get_node("PunchArea").scale.x *= -1
 		flip = false
-	

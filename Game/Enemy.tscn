@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sprites/kevin_idle.png" type="Texture" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/kevin_walk.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/kevin_walk2.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/kevin_jump2.png" type="Texture" id=5]
@@ -12,10 +12,6 @@
 [ext_resource path="res://Sprites/kevin_idle_gun.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/kevin_walk_gun.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/kevin_walk_gun2.png" type="Texture" id=12]
-[ext_resource path="res://Sound/gun sound.wav" type="AudioStream" id=13]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.83318, 34.7988 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -29,14 +25,14 @@ animations = [ {
 "name": "punch",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "drink",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "fall",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
@@ -65,19 +61,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Ennemy" type="KinematicBody2D"]
-script = ExtResource( 2 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.83318, 34.7988 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -2.52554, 7.57661 )
-shape = SubResource( 1 )
+[node name="Ennemy" type="Area2D"]
+script = ExtResource( 2 )
 
 [node name="Kevin" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "walk_gun"
 
-[node name="GunSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 13 )
-volume_db = -13.125
-pitch_scale = 2.03
-attenuation = 1.56918
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -2.52554, 7.57661 )
+shape = SubResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_Ennemy_area_entered"]
