@@ -47,3 +47,6 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 513.919, 302.658 )
