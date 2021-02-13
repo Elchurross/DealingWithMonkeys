@@ -23,6 +23,7 @@ scale = Vector2( 1.57462, 1.32562 )
 
 [node name="Camera2D" parent="Player" instance=ExtResource( 3 )]
 position = Vector2( 12.84, 57.9396 )
+zoom = Vector2( 0.8, 0.8 )
 process_mode = 0
 smoothing_speed = 10.0
 editor_draw_screen = false
