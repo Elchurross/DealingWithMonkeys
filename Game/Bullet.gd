@@ -1,10 +1,11 @@
-extends Area2D
+extends KinematicBody2D
 
-var speed : int = 700
+var speed : int = 10
 var direction : bool = true
 
-func _init(dir):
-	direction = dir
+func _init():
+	pass
 
 func _physics_process(delta):
-	position += transform.x * speed * delta
+	var movement = Vector2(speed,0)
+	move_and_collide(movement)

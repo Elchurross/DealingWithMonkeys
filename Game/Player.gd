@@ -1,5 +1,4 @@
 extends KinematicBody2D
-export (PackedScene) var Bullet
 
 var maxHealth : int = 100
 var health : int = maxHealth
@@ -18,6 +17,8 @@ var tesson : int = 5
 var maxTesson : int = 10
 
 var cooldown : int = 0
+
+var Bullet = preload("res://Bullet.tscn")
 
 func drinkBeer():
 	get_node("Kevin").play("drink")
@@ -78,6 +79,10 @@ func _physics_process(delta):
 			cooldown = 10
 		else:
 			var bullet = Bullet.instance()
+			if (sprite.flip_h == true):
+				bullet.speed = -bullet.speed
+			elif (sprite.flip_h == false):
+				bullet.speed = bullet.speed
 			owner.add_child(bullet)
 			bullet.transform = get_node("Kevin").global_transform
 			ammo -= 1
