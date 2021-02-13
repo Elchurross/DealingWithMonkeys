@@ -32,11 +32,6 @@ animations = [ {
 "name": "hurt",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "punch",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "drink",
@@ -71,12 +66,19 @@ animations = [ {
 "loop": true,
 "name": "walk_gun",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "punch",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8.83318, 34.7988 )
 
-[node name="Ennemy" type="KinematicBody2D"]
+[node name="Ennemy" type="KinematicBody2D" groups=[
+"Ennemy",
+]]
 script = ExtResource( 2 )
 
 [node name="Kevin" type="AnimatedSprite" parent="."]

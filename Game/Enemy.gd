@@ -27,6 +27,7 @@ func hurt(damage):
 		health -= damage
 		cooldown.start(0.5)
 		get_node("Kevin").play("hurt")
+		get_node("CollisionShape2D").disabled = true
 
 func _physics_process(delta):
 	velocity.x = 0

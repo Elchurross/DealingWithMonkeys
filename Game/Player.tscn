@@ -32,11 +32,6 @@ animations = [ {
 "name": "hurt",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "punch",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "drink",
@@ -71,6 +66,11 @@ animations = [ {
 "loop": true,
 "name": "walk_gun",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "punch",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -85,7 +85,7 @@ script = ExtResource( 2 )
 [node name="Kevin" type="AnimatedSprite" parent="."]
 position = Vector2( -2, 0 )
 frames = SubResource( 1 )
-animation = "drink"
+animation = "walk_gun"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2.52554, 7.57661 )
@@ -106,4 +106,10 @@ one_way_collision = true
 [node name="Cooldown" type="Timer" parent="."]
 
 [node name="Boost" type="Timer" parent="."]
+
+[node name="PosShootRight" type="Position2D" parent="."]
+position = Vector2( 20.1895, 3.83767 )
+
+[node name="PosShootLeft" type="Position2D" parent="."]
+position = Vector2( -26.53, 3.8 )
 [connection signal="body_entered" from="PunchArea" to="." method="_on_PunchArea_body_entered"]

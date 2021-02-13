@@ -21,5 +21,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Bullet_body_entered(body):
-	print ("bullet hit")
+	if body.is_in_group("Ennemy"):
+		body.hurt(50)
 	queue_free()

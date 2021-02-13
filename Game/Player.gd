@@ -33,7 +33,7 @@ func smokeJoint():
 func drinkBeer():
 	get_node("Kevin").play("drink")
 	health = maxHealth if health + beer > maxHealth else health + beer
-	cooldown.start(0.5)
+	cooldown.start(0.3)
 	tesson = maxTesson if tesson + 1 > maxTesson else tesson + 1
 	
 func addAmmo(ammount):
@@ -94,7 +94,10 @@ func _physics_process(delta):
 			var bullet = Bullet.instance(true)
 			bullet.direction = flip
 			get_parent().add_child(bullet)
-			bullet.transform = get_node("Kevin").global_transform
+			if !flip:
+				bullet.position = get_node("PosShootRight").global_position
+			else:
+				bullet.position = get_node("PosShootLeft").global_position
 			ammo -= 1
 	
 	if velocity.x < 0:
@@ -110,7 +113,8 @@ func _physics_process(delta):
 
 
 func _on_PunchArea_body_entered(body):
-	if boost.is_stopped():
-		body.hurt(20)
-	else:
-		body.hurt(40)
+	if body.is_in_group("Ennemy"):
+		if boost.is_stopped():
+			body.hurt(20)
+		else:
+			body.hurt(40)
