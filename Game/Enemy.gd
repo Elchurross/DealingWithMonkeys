@@ -67,24 +67,24 @@ func _physics_process(delta):
 	
 	velocity.y += gravity * delta
 	
-#	if Input.is_action_just_pressed("jump") and is_on_floor():
-#		velocity.y -= jumpForce
-#		get_node("Kevin").play("jump")
-#		jumping	= true
-#	if !is_on_floor() and !jumping:
-#		get_node("Kevin").play("fall")
-#
-#	if Input.is_action_just_pressed("punch"):
-#		if ammo == 0:
-#			get_node("Kevin").play("punch")
-#			cooldown = 10
-#		else:
-#			var bullet = Bullet.instance(true)
-#			bullet.direction = flip
-#			owner.add_child(bullet)
-#			bullet.transform = get_node("Kevin").global_transform
-#			$GunSound.play()
-#			ammo -= 1
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y -= jumpForce
+		get_node("Kevin").play("jump")
+		jumping	= true
+	if !is_on_floor() and !jumping:
+		get_node("Kevin").play("fall")
+	
+	if Input.is_action_just_pressed("punch"):
+		if ammo == 0:
+			get_node("Kevin").play("punch")
+			cooldown = 10
+		else:
+			var bullet = Bullet.instance(true)
+			bullet.direction = flip
+			owner.add_child(bullet)
+			bullet.transform = get_node("Kevin").global_transform
+			$GunSound.play()
+			ammo -= 1
 	
 	if velocity.x < 0:
 		sprite.flip_h = true
