@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wc.png-b58b97909ca041e57be75bca61bc8bb4.stex"
+path="res://.import/ville_fond_resize.png-1948cfbeb8113f7a0159755dd9c1e8a5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Bar/wc.png"
-dest_files=[ "res://.import/wc.png-b58b97909ca041e57be75bca61bc8bb4.stex" ]
+source_file="res://Sprites/Niveau1/ville_fond_resize.png"
+dest_files=[ "res://.import/ville_fond_resize.png-1948cfbeb8113f7a0159755dd9c1e8a5.stex" ]
 
 [params]
 

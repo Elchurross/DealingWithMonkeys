@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/biere.png-5b8166c4791aa2e4c4d8471586a91924.stex"
+path="res://.import/baerman.png-f28b5a4645b59d096380fa6df9f4497f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Bar/biere.png"
-dest_files=[ "res://.import/biere.png-5b8166c4791aa2e4c4d8471586a91924.stex" ]
+source_file="res://Sprites/Niveau1/baerman.png"
+dest_files=[ "res://.import/baerman.png-f28b5a4645b59d096380fa6df9f4497f.stex" ]
 
 [params]
 

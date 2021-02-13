@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/etagere_qui_gere.png-4e2380a7a3917c76e1e159136794a634.stex"
+path="res://.import/mirroir.png-7dd9d39986a78d64714cdeb8885e5036.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Bar/etagere_qui_gere.png"
-dest_files=[ "res://.import/etagere_qui_gere.png-4e2380a7a3917c76e1e159136794a634.stex" ]
+source_file="res://Sprites/Niveau1/mirroir.png"
+dest_files=[ "res://.import/mirroir.png-7dd9d39986a78d64714cdeb8885e5036.stex" ]
 
 [params]
 

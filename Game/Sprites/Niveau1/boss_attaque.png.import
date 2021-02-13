@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sol_bar.png-9ea088df5761b70add39f791b7540d60.stex"
+path="res://.import/boss_attaque.png-3fefa5deade69a7426b45c301bc7e5a9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Bar/sol_bar.png"
-dest_files=[ "res://.import/sol_bar.png-9ea088df5761b70add39f791b7540d60.stex" ]
+source_file="res://Sprites/Niveau1/boss_attaque.png"
+dest_files=[ "res://.import/boss_attaque.png-3fefa5deade69a7426b45c301bc7e5a9.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tabouret.png-f7bce57d9c117f257b81dce9da2d4c33.stex"
+path="res://.import/ville_fond_2.png-98a06764091af0323d3f2da97c97f713.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Bar/tabouret.png"
-dest_files=[ "res://.import/tabouret.png-f7bce57d9c117f257b81dce9da2d4c33.stex" ]
+source_file="res://Sprites/Niveau1/ville_fond_2.png"
+dest_files=[ "res://.import/ville_fond_2.png-98a06764091af0323d3f2da97c97f713.stex" ]
 
 [params]
 

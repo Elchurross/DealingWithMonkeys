@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mirroir.png-e546a76f5481723d037f76df80385682.stex"
+path="res://.import/bar_1.png-d74c96abbb4c3e685150429e9454b52f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Bar/mirroir.png"
-dest_files=[ "res://.import/mirroir.png-e546a76f5481723d037f76df80385682.stex" ]
+source_file="res://Sprites/Niveau1/bar_1.png"
+dest_files=[ "res://.import/bar_1.png-d74c96abbb4c3e685150429e9454b52f.stex" ]
 
 [params]
 

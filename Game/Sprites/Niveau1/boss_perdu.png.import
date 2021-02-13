@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bar_3.png-bb86b2be5f4535f70bbb571385e22d75.stex"
+path="res://.import/boss_perdu.png-33e36df8246a30f6ad290894c07a0d03.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Bar/bar_3.png"
-dest_files=[ "res://.import/bar_3.png-bb86b2be5f4535f70bbb571385e22d75.stex" ]
+source_file="res://Sprites/Niveau1/boss_perdu.png"
+dest_files=[ "res://.import/boss_perdu.png-33e36df8246a30f6ad290894c07a0d03.stex" ]
 
 [params]
 

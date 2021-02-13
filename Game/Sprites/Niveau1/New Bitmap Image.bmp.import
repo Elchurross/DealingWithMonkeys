@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mur_bar.png-fbe6241f6fe202f3fa92c320ddd8934d.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
-source_file="res://Sprites/Bar/mur_bar.png"
-dest_files=[ "res://.import/mur_bar.png-fbe6241f6fe202f3fa92c320ddd8934d.stex" ]
-
+source_file="res://Sprites/Bar/New Bitmap Image.bmp"
 [params]
 
 compress/mode=0
