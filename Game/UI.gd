@@ -24,7 +24,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var number_label_hp = get_node("HBoxContainer/Bars/Bar/HPCount/Background/Number")
 	var number_label_tesson = get_node("HBoxContainer/Counters/TESSONCount2/Background/Number")
 	var bar = get_node("HBoxContainer/Bars/Bar/Gauge")

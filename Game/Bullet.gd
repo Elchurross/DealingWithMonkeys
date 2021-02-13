@@ -7,7 +7,7 @@ onready var sprite : Sprite = get_node("bullet")
 func _init():
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if direction:
 		sprite.flip_h = true
 		position.x -= speed

@@ -15,7 +15,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	var raycast_node = get_node("RayCast2D")
 	if raycast_node.is_colliding():
 		var distance =  self.position.distance_to(raycast_node.get_collision_point())
@@ -29,9 +29,9 @@ func _physics_process(delta):
 		isDown = true
 		isUp = false
 	if (isDown) :
-		move_and_slide(Vector2(0,1) * speed)
+		var _value = move_and_slide(Vector2(0,1) * speed)
 	elif (isUp) :
-		move_and_slide(Vector2(0,-1) * speed)
+		var _value = move_and_slide(Vector2(0,-1) * speed)
 
 	pass
 
