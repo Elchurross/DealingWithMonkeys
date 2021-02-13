@@ -11,20 +11,29 @@ var velocity : Vector2 =  Vector2.ZERO
 var flip : bool = false
 
 onready var sprite : AnimatedSprite = get_node("Kevin")
+onready var cooldown : Timer = get_node("Cooldown")
+onready var boost : Timer = get_node("Boost")
 
 var jumping : bool = false
+var Bullet = preload("res://Bullet.tscn")
 var ammo : int = 0
 var tesson : int = 5
 var maxTesson : int = 10
 
-var cooldown : int = 0
-
-var Bullet = preload("res://Bullet.tscn")
+func _ready():
+	cooldown.one_shot = true
+	boost.one_shot = true
+	
+func smokeJoint():
+	get_node("Kevin").play("joint")
+	cooldown.start(0.5)
+	boost.stop()
+	boost.start(100)
 
 func drinkBeer():
 	get_node("Kevin").play("drink")
 	health = maxHealth if health + beer > maxHealth else health + beer
-	cooldown = 40
+	cooldown.start(0.5)
 	tesson = maxTesson if tesson + 1 > maxTesson else tesson + 1
 	
 func addAmmo(ammount):
@@ -40,10 +49,9 @@ func hurt(damage):
 
 func _physics_process(delta):
 	velocity.x = 0
-	if cooldown > 0:
+	if !cooldown.is_stopped():
 		velocity = move_and_slide(velocity, Vector2.UP)
 		velocity.y += gravity * delta
-		cooldown -= 1
 		return
 	
 	if  Input.is_action_pressed("move_left"):
@@ -77,7 +85,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("punch"):
 		if ammo == 0:
 			get_node("Kevin").play("punch")
-			cooldown = 10
+			cooldown.start(0.2)
 		else:
 			var bullet = Bullet.instance(true)
 			bullet.direction = flip
