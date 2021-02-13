@@ -7,4 +7,11 @@ func _init(dir):
 	direction = dir
 
 func _physics_process(delta):
-	position += transform.x * speed * delta
+	print("ok")
+#	var pos : Vector2 = get_position()
+#	print(direction)
+#	if direction:
+#		pos.x += speed * delta
+#	else:
+#		pos.x -= speed * delta
+#	set_position(pos)

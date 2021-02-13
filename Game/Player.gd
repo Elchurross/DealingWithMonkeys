@@ -77,7 +77,7 @@ func _physics_process(delta):
 			get_node("Kevin").play("punch")
 			cooldown = 10
 		else:
-			var bullet = Bullet.instance()
+			var bullet = Bullet.instance(true)
 			owner.add_child(bullet)
 			bullet.transform = get_node("Kevin").global_transform
 			ammo -= 1

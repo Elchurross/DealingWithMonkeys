@@ -19,10 +19,10 @@ Bullet = ExtResource( 7 )
 position = Vector2( 12.84, 57.9396 )
 
 [node name="GUI" parent="Player" instance=ExtResource( 4 )]
-margin_left = -499.104
-margin_top = -243.06
-margin_right = 522.896
-margin_bottom = -150.06
+margin_left = -499.16
+margin_top = -246.06
+margin_right = 522.84
+margin_bottom = -153.06
 
 [node name="Tile" parent="." instance=ExtResource( 1 )]
 position = Vector2( 368, 264 )
@@ -57,3 +57,6 @@ position = Vector2( 554.056, 217.092 )
 scale = Vector2( 0.7, 0.7 )
 collision_layer = 2147483648
 collision_mask = 0
+
+[node name="Bullet" parent="." instance=ExtResource( 7 )]
+position = Vector2( -8, -32 )
