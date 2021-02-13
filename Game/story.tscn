@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://story.gd" type="Script" id=1]
+[ext_resource path="res://Assets/spaceToSkip.png" type="Texture" id=2]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -10,25 +11,56 @@ reference_path = "res://MainScene.tscn"
 margin_right = 40.0
 margin_bottom = 40.0
 rect_scale = Vector2( 32.9783, 19.3323 )
-color = Color( 0, 0, 0, 1 )
+color = Color( 0.12549, 0.0666667, 0.0666667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tween_scroll" type="Tween" parent="."]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer/HBoxContainer/MarginContainer/NinePatchRect"]
+margin_left = 216.81
+margin_top = -24.9763
+margin_right = 1716.81
+margin_bottom = 375.024
+rect_scale = Vector2( 0.442824, 0.443779 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Node" type="Node2D" parent="."]
 light_mask = 2
-position = Vector2( 7.07104, -1.41418 )
+position = Vector2( 8.56933, -1.41418 )
 scale = Vector2( 0.988681, 0.99522 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Label" type="Label" parent="Node"]
-margin_left = -0.4
-margin_top = 336.0
-margin_right = 999.6
-margin_bottom = 537.0
+margin_left = -127.699
+margin_top = 326.967
+margin_right = 1126.3
+margin_bottom = 400.0
 rect_scale = Vector2( 1.07915, 2.1452 )
+custom_colors/font_color = Color( 0.737255, 0.384314, 0.384314, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Let me tell you a story.
 
 It is the story of a random guy named Kevin, from Montpellier, France.
@@ -41,24 +73,18 @@ Actually, things started to get worse.
 The side effects, coming from his growing consumption, have gradually damaged his body. 
 More than his body, his memory stated to fail him.
 
-Things began to get blury, he began to forget, to not remember the little things that used to put his life together. Day after day, black outs are more present in his life.
+Things began to get blury, he began to forget,
+to not remember the little things that used to put his life together. 
+Day after day, black outs a more present in his life.
 
-The previous nights were no exception. He doesn't remember. He's used to it. One more cannot hurt, can it ? 
+The previous nights were no exception. 
+He doesn't remember. He's used to it. 
+One more cannot hurt, can it ? 
 "
 align = 1
-valign = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="tween_scroll" type="Tween" parent="."]
-
-[node name="Label" type="Label" parent="."]
-margin_right = 300.0
-margin_bottom = 14.0
-rect_scale = Vector2( 3.91381, 2.50844 )
-text = "press \"space\" for skip"
-align = 1
+valign = 1
+uppercase = true
+percent_visible = -0.00149031
 __meta__ = {
 "_edit_use_anchors_": false
 }
