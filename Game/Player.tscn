@@ -27,10 +27,10 @@ animations = [ {
 "name": "joint",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "jump",
-"speed": 4.0
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_gun",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
@@ -42,24 +42,19 @@ animations = [ {
 "name": "dead",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "jump",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "idle_gun",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
 "name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_gun",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "punch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "drink",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -67,9 +62,14 @@ animations = [ {
 "name": "fall",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "idle_gun",
+"name": "drink",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "punch",
 "speed": 5.0
 } ]
 
@@ -110,8 +110,8 @@ one_way_collision = true
 [node name="Boost" type="Timer" parent="."]
 
 [node name="PosShootRight" type="Position2D" parent="."]
-position = Vector2( 20.1895, 3.83767 )
+position = Vector2( 27.7621, 3.39222 )
 
 [node name="PosShootLeft" type="Position2D" parent="."]
-position = Vector2( -26.53, 3.8 )
+position = Vector2( -33.4345, 3.57728 )
 [connection signal="body_entered" from="PunchArea" to="." method="_on_PunchArea_body_entered"]

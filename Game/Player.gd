@@ -19,6 +19,7 @@ var talking : bool = false
 const Bullet = preload("res://Bullet.tscn")
 var ammo : int = 0
 var tesson : int = 5
+const Tesson = preload("res://Tesson.tscn")
 var maxTesson : int = 10
 
 func _ready():
@@ -92,7 +93,7 @@ func _physics_process(delta):
 			get_node("Kevin").play("punch")
 			cooldown.start(0.2)
 		else:
-			var bullet = Bullet.instance(true)
+			var bullet = Bullet.instance()
 			bullet.direction = flip
 			get_parent().add_child(bullet)
 			if !flip:
@@ -100,6 +101,18 @@ func _physics_process(delta):
 			else:
 				bullet.position = get_node("PosShootLeft").global_position
 			ammo -= 1
+	
+	if Input.is_action_just_pressed("throw") and tesson > 0:
+		get_node("Kevin").play("punch")
+		cooldown.start(0.2)
+		var t = Tesson.instance()
+		t.direction = flip
+		get_parent().add_child(t)
+		if !flip:
+			t.position = get_node("PosShootRight").global_position
+		else:
+			t.position = get_node("PosShootLeft").global_position
+		tesson -= 1
 	
 	if velocity.x < 0:
 		if !flip:
@@ -111,7 +124,6 @@ func _physics_process(delta):
 			sprite.flip_h = false
 			get_node("PunchArea").scale.x *= -1
 		flip = false
-
 
 func _on_PunchArea_body_entered(body):
 	if body.is_in_group("Ennemy"):

@@ -1,6 +1,6 @@
 extends Area2D
 
-var speed : int = 200
+var speed : int = 700
 var direction : bool = true
 onready var sprite : Sprite = get_node("bullet")
 
