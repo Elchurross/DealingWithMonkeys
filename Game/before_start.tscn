@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://before_start.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+reference_path = "res://menu.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 25.5228, 15.0526 )
+color = Color( 0.12549, 0.0666667, 0.0666667, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 1.36783, 1.57128 )
+text = " Hi, dear player
+
+
+
+
+
+
+
+
+This game  was created during a game jam(54h) you can find your contact in the Readme from github 
+
+
+Have fun
+
+
+
+
+
+
+
+
+press \"SPACE\" for play"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

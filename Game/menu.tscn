@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://menu_button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/start.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( -633.568, 243.245 )
+
+[node name="start" type="Sprite" parent="."]
+position = Vector2( 1146.88, 58.5881 )
+scale = Vector2( 0.576411, 0.564897 )
+texture = ExtResource( 2 )
+
+[node name="lauch_button" parent="." instance=ExtResource( 1 )]
+margin_left = 1248.03
+margin_top = 27.206
+margin_right = 1315.03
+margin_bottom = 47.206
+rect_scale = Vector2( 4.91037, 4.88363 )
+focus_neighbour_top = NodePath("../Exit_button")
+focus_neighbour_bottom = NodePath("../Options_Button")
+text = "New game"
+reference_path = "res://story.tscn"
+
+[node name="Exit_button" parent="." instance=ExtResource( 1 )]
+margin_left = 1316.93
+margin_top = 256.815
+margin_right = 1353.93
+margin_bottom = 276.815
+rect_scale = Vector2( 5.7789, 4.3003 )
+focus_neighbour_top = NodePath("../Options_Button")
+focus_neighbour_bottom = NodePath("../lauch_button")
+text = "Exit"
+
+[node name="Options_Button" parent="." instance=ExtResource( 1 )]
+margin_left = 1313.87
+margin_top = 142.334
+margin_right = 1364.87
+margin_bottom = 162.334
+rect_scale = Vector2( 4.16593, 4.87411 )
+focus_neighbour_top = NodePath("../lauch_button")
+focus_neighbour_bottom = NodePath("../Exit_button")
+text = "Options"
+reference_path = "res://option_scene.tscn"
