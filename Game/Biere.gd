@@ -19,7 +19,6 @@ func _physics_process(delta):
 	var raycast_node = get_node("RayCast2D")
 	if raycast_node.is_colliding():
 		var distance =  self.position.distance_to(raycast_node.get_collision_point())
-		print(distance)
 		if (distance < 26):
 			isUp = true
 			isDown = false
@@ -29,8 +28,6 @@ func _physics_process(delta):
 	else:
 		isDown = true
 		isUp = false
-	print(isUp)
-	print(isDown)
 	if (isDown) :
 		move_and_slide(Vector2(0,1) * speed)
 	elif (isUp) :

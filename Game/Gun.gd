@@ -28,8 +28,6 @@ func _physics_process(delta):
 	else:
 		isDown = true
 		isUp = false
-	print(isUp)
-	print(isDown)
 	if (isDown) :
 		move_and_slide(Vector2(0,1) * speed)
 	elif (isUp) :
