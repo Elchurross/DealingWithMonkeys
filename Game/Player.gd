@@ -83,6 +83,7 @@ func _physics_process(delta):
 			bullet.direction = flip
 			owner.add_child(bullet)
 			bullet.transform = get_node("Kevin").global_transform
+			$GunSound.play()
 			ammo -= 1
 	
 	if velocity.x < 0:
