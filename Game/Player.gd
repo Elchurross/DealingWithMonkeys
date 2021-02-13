@@ -15,6 +15,7 @@ onready var cooldown : Timer = get_node("Cooldown")
 onready var boost : Timer = get_node("Boost")
 
 var jumping : bool = false
+var talking : bool = false
 const Bullet = preload("res://Bullet.tscn")
 var ammo : int = 0
 var tesson : int = 5
@@ -50,7 +51,7 @@ func hurt(damage):
 
 func _physics_process(delta):
 	velocity.x = 0
-	if !cooldown.is_stopped() or health <= 0:
+	if !cooldown.is_stopped() or health <= 0 or talking:
 		velocity = move_and_slide(velocity, Vector2.UP)
 		velocity.y += gravity * delta
 		return
