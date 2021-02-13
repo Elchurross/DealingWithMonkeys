@@ -13,7 +13,7 @@
 [ext_resource path="res://Sprites/kevin_walk_gun.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/kevin_walk_gun2.png" type="Texture" id=12]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": false,
@@ -61,17 +61,17 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8.83318, 34.7988 )
 
 [node name="Ennemy" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Kevin" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
-animation = "walk_gun"
+frames = SubResource( 1 )
+animation = "drink"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2.52554, 7.57661 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 [connection signal="area_entered" from="." to="." method="_on_Ennemy_area_entered"]

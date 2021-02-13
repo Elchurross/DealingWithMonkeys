@@ -41,7 +41,6 @@ func _physics_process(delta):
 		flip = false
 
 func _on_Ennemy_area_entered(area):
-	print("nik")
 	if area.is_in_group("Punch"):
 		hurt(20)
 	if area.is_in_group("Bullet"):
