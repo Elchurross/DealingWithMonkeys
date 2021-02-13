@@ -1,17 +1,16 @@
-extends Area2D
+extends KinematicBody2D
 
-var speed : int = 700
+var speed : int = 10
 var direction : bool = true
+onready var sprite : Sprite = get_node("bullet")
 
-func _init(dir):
-	direction = dir
+func _init():
+	pass
 
 func _physics_process(delta):
-	print("ok")
-#	var pos : Vector2 = get_position()
-#	print(direction)
-#	if direction:
-#		pos.x += speed * delta
-#	else:
-#		pos.x -= speed * delta
-#	set_position(pos)
+	if direction:
+		sprite.flip_h = true
+		position.x -= speed
+	else:
+		sprite.flip_h = false
+		position.x += speed

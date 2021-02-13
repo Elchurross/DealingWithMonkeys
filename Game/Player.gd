@@ -1,5 +1,4 @@
 extends KinematicBody2D
-export (PackedScene) var Bullet
 
 var maxHealth : int = 100
 var health : int = maxHealth
@@ -9,6 +8,7 @@ var speed : int = 200
 var jumpForce : int = 420
 var gravity : int = 900
 var velocity : Vector2 =  Vector2.ZERO
+var flip : bool = false
 
 onready var sprite : AnimatedSprite = get_node("Kevin")
 
@@ -18,6 +18,8 @@ var tesson : int = 5
 var maxTesson : int = 10
 
 var cooldown : int = 0
+
+var Bullet = preload("res://Bullet.tscn")
 
 func drinkBeer():
 	get_node("Kevin").play("drink")
@@ -78,12 +80,15 @@ func _physics_process(delta):
 			cooldown = 10
 		else:
 			var bullet = Bullet.instance(true)
+			bullet.direction = flip
 			owner.add_child(bullet)
 			bullet.transform = get_node("Kevin").global_transform
 			ammo -= 1
 	
 	if velocity.x < 0:
 		sprite.flip_h = true
+		flip = true
 	elif velocity.x > 0:
 		sprite.flip_h = false
+		flip = false
 	

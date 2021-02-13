@@ -13,7 +13,6 @@
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 419.16, 206.06 )
-Bullet = ExtResource( 7 )
 
 [node name="Camera2D" parent="Player" instance=ExtResource( 3 )]
 position = Vector2( 12.84, 57.9396 )
