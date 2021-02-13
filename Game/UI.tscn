@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/label_HP_bg.png" type="Texture" id=4]
 [ext_resource path="res://Assets/lifebar_fill.png" type="Texture" id=5]
 [ext_resource path="res://Assets/PngItem_1119830.png" type="Texture" id=6]
-[ext_resource path="res://Assets/bombs_icon.png" type="Texture" id=7]
+[ext_resource path="res://Assets/cul_de_bouteille.png" type="Texture" id=7]
 [ext_resource path="res://UI.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
@@ -115,10 +115,10 @@ __meta__ = {
 [node name="Title" type="TextureRect" parent="HBoxContainer/Counters/TESSONCount2/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 45.2142
-margin_top = 5.65827
-margin_right = -4.78583
-margin_bottom = -5.34174
+margin_left = 39.5
+margin_top = 2.0
+margin_right = -2.5
+margin_bottom = -2.0
 texture = ExtResource( 7 )
 expand = true
 __meta__ = {

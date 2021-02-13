@@ -1,0 +1,45 @@
+[gd_scene format=2]
+
+[node name="Menu" type="CanvasLayer"]
+pause_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 394.121
+margin_top = 113.53
+margin_right = 894.121
+margin_bottom = 613.53
+rect_min_size = Vector2( 500, 500 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_right = 498.0
+margin_bottom = 396.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="back" type="Button" parent="Panel"]
+margin_left = 52.5656
+margin_top = 413.149
+margin_right = 223.566
+margin_bottom = 480.149
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="Button" parent="Panel"]
+margin_left = 263.48
+margin_top = 414.007
+margin_right = 434.48
+margin_bottom = 481.007
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/back" to="." method="back"]
+[connection signal="pressed" from="Panel/save" to="." method="save"]

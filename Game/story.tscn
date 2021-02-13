@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://story.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+reference_path = "res://MainScene.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 32.9783, 19.3323 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node" type="Node2D" parent="."]
+light_mask = 2
+position = Vector2( 7.07104, -1.41418 )
+scale = Vector2( 0.988681, 0.99522 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Node"]
+margin_left = -0.4
+margin_top = 336.0
+margin_right = 999.6
+margin_bottom = 537.0
+rect_scale = Vector2( 1.07915, 2.1452 )
+text = "Let me tell you a story.
+
+It is the story of a random guy named Kevin, from Montpellier, France.
+He failed all his exams, therefore he started to drink all day long.
+Soon, alcohol was not enough anymore. The drugs started to invade his life... the poor thing.
+His life was a complete and utter failure.
+
+But time flies and nothing gets better. 
+Actually, things started to get worse.
+The side effects, coming from his growing consumption, have gradually damaged his body. 
+More than his body, his memory stated to fail him.
+
+Things began to get blury, he began to forget, to not remember the little things that used to put his life together. Day after day, black outs are more present in his life.
+
+The previous nights were no exception. He doesn't remember. He's used to it. One more cannot hurt, can it ? 
+"
+align = 1
+valign = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tween_scroll" type="Tween" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_right = 300.0
+margin_bottom = 14.0
+rect_scale = Vector2( 3.91381, 2.50844 )
+text = "press \"space\" for skip"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
