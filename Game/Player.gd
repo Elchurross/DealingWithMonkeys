@@ -1,4 +1,5 @@
 extends KinematicBody2D
+export (PackedScene) var Bullet
 
 var maxHealth : int = 100
 var health : int = maxHealth
@@ -12,7 +13,7 @@ var velocity : Vector2 =  Vector2.ZERO
 onready var sprite : AnimatedSprite = get_node("Kevin")
 
 var jumping : bool = false
-var gunBullets : int = 0
+var ammo : int = 40
 var tesson : int = 5
 var maxTesson : int = 10
 
@@ -49,12 +50,12 @@ func _physics_process(delta):
 	if is_on_floor():
 		jumping = false
 		if velocity.x == 0:
-			if gunBullets <= 0:
+			if ammo <= 0:
 				get_node("Kevin").play("idle")
 			else:
 				get_node("Kevin").play("idle_gun")
 		else:
-			if gunBullets <= 0:
+			if ammo <= 0:
 				get_node("Kevin").play("walk")
 			else:
 				get_node("Kevin").play("walk_gun")
@@ -69,8 +70,13 @@ func _physics_process(delta):
 		get_node("Kevin").play("fall")
 	
 	if Input.is_action_just_pressed("punch"):
-		get_node("Kevin").play("punch")
-		cooldown = 10
+		if ammo == 0:
+			get_node("Kevin").play("punch")
+			cooldown = 10
+		else:
+			var bullet = Bullet.instance()
+			owner.add_child(bullet)
+			bullet.transform = $Kevin.global_transform
 	
 	if velocity.x < 0:
 		sprite.flip_h = true
