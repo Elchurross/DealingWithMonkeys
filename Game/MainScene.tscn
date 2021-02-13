@@ -12,7 +12,8 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 404.024, 417.966 )
+position = Vector2( 143.396, 401.014 )
+scale = Vector2( 1.16375, 1.23731 )
 
 [node name="Camera2D" parent="Player" instance=ExtResource( 3 )]
 position = Vector2( 12.84, 57.9396 )
@@ -30,8 +31,8 @@ margin_bottom = 106.0
 rect_rotation = -0.0582678
 
 [node name="Tile" parent="." instance=ExtResource( 1 )]
-position = Vector2( 208.823, 491.943 )
-scale = Vector2( 14.6491, -0.856721 )
+position = Vector2( 359.267, 500.419 )
+scale = Vector2( 14.6491, -1.70938 )
 
 [node name="Tile2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 965.203, 572.681 )
