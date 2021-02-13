@@ -8,6 +8,7 @@ func _init(dir):
 
 func _physics_process(delta):
 	var pos : Vector2 = get_position()
+	print(direction)
 	if direction:
 		pos.x += speed * delta
 	else:

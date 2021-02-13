@@ -76,7 +76,7 @@ func _physics_process(delta):
 		else:
 			var bullet = Bullet.instance()
 			owner.add_child(bullet)
-			bullet.transform = $Kevin.global_transform
+			bullet.transform = get_node("Kevin").global_transform
 	
 	if velocity.x < 0:
 		sprite.flip_h = true
