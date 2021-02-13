@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/kevin_idle.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -13,8 +13,9 @@
 [ext_resource path="res://Sprites/kevin_walk_gun.png" type="Texture" id=11]
 [ext_resource path="res://Sprites/kevin_walk_gun2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/kevin_joint.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/kevin_hurt.png" type="Texture" id=14]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": false,
@@ -24,6 +25,11 @@ animations = [ {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "joint",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "hurt",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -67,7 +73,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8.83318, 34.7988 )
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -78,12 +84,12 @@ script = ExtResource( 2 )
 
 [node name="Kevin" type="AnimatedSprite" parent="."]
 position = Vector2( -2, 0 )
-frames = SubResource( 2 )
-animation = "joint"
+frames = SubResource( 1 )
+animation = "drink"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -2.52554, 7.57661 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="PunchArea" type="Area2D" parent="." groups=[
 "Punch",
@@ -100,3 +106,4 @@ one_way_collision = true
 [node name="Cooldown" type="Timer" parent="."]
 
 [node name="Boost" type="Timer" parent="."]
+[connection signal="body_entered" from="PunchArea" to="." method="_on_PunchArea_body_entered"]

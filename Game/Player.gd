@@ -15,7 +15,7 @@ onready var cooldown : Timer = get_node("Cooldown")
 onready var boost : Timer = get_node("Boost")
 
 var jumping : bool = false
-var Bullet = preload("res://Bullet.tscn")
+const Bullet = preload("res://Bullet.tscn")
 var ammo : int = 0
 var tesson : int = 5
 var maxTesson : int = 10
@@ -45,6 +45,7 @@ func hurt(damage):
 		get_node("Kevin").play("dead")
 	else:
 		health -= damage
+		cooldown.start(0.5)
 		get_node("Kevin").play("hurt")
 
 func _physics_process(delta):
@@ -57,7 +58,6 @@ func _physics_process(delta):
 	get_node("PunchArea/CollisionShape2D").disabled = true
 	
 	if  Input.is_action_pressed("move_left"):
-		
 		velocity.x -= speed
 	elif Input.is_action_pressed("move_right"):
 		velocity.x += speed
@@ -93,7 +93,7 @@ func _physics_process(delta):
 		else:
 			var bullet = Bullet.instance(true)
 			bullet.direction = flip
-			owner.add_child(bullet)
+			get_parent().add_child(bullet)
 			bullet.transform = get_node("Kevin").global_transform
 			ammo -= 1
 	
@@ -107,3 +107,10 @@ func _physics_process(delta):
 			sprite.flip_h = false
 			get_node("PunchArea").scale.x *= -1
 		flip = false
+
+
+func _on_PunchArea_body_entered(body):
+	if boost.is_stopped():
+		body.hurt(20)
+	else:
+		body.hurt(40)
