@@ -98,7 +98,8 @@ func _physics_process(delta):
 		if ammo == 0:
 			get_node("PunchArea/CollisionShape2D").disabled = false
 			get_node("Kevin").play("punch")
-			cooldown.start(0.2)
+			get_node("AudioPunch").play()
+			cooldown.start(0.3)
 		else:
 			var bullet = Bullet.instance()
 			bullet.direction = flip
@@ -112,6 +113,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("throw") and tesson > 0:
 		get_node("Kevin").play("punch")
+		get_node("AudioThrow").play()
 		cooldown.start(0.2)
 		var t = Tesson.instance()
 		t.direction = flip

@@ -84,6 +84,7 @@ func _physics_process(delta):
 				cola.direction = false
 				cola.position = get_node("PosShootRight").global_position
 			get_parent().add_child(cola)
+			get_node("AudioThrow").play()
 	
 	if velocity.x > 0:
 		sprite.flip_h = true
