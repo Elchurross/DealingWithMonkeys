@@ -8,7 +8,7 @@ var player
 var talking = true
 var used = false
 var working = true
-var dialog = ["Hey i am Donal","I would say that Poutine is a (way) more pleasant man than me","But today, I will prove that it is not the case!","So, you can have all my wine!"]
+var dialog = ["Hey i am Donald Trump","I would say that Poutine is a (way) more pleasant man than me","But today, I will prove that it is not the case!","So, you can have all my wine!"]
 
 func _process(_delta):
 	if box == null and player != null and talking:

@@ -22,7 +22,7 @@ rect_scale = Vector2( 4.91037, 4.83228 )
 focus_neighbour_top = NodePath("../Exit_button")
 focus_neighbour_bottom = NodePath("../Options_Button")
 text = "New game"
-reference_path = "res://MainScene.tscn"
+reference_path = "res://story.tscn"
 
 [node name="Exit_button" parent="." instance=ExtResource( 1 )]
 margin_left = 1239.06
