@@ -3,6 +3,7 @@ extends Node2D
 var Box = preload("res://DialogBox.tscn")
 var playerNear : bool = false
 var box 
+export var reference_path = ""
 var player
 var talking = true
 const dialog = ["Wow! Your fighting skill is actually crazy!","Half junkie, half ninja!","Careful, I just walked passed someone who looked just like Sideshow Bob!","Take a puff"]
