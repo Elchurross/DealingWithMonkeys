@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Niveau1/TileSetNiveau1.tres" type="TileSet" id=1]
 [ext_resource path="res://Niveau1/Niveau1.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Niveau1/LightBarA.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Niveau1/LightBarC.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Niveau4/NPCSinge2.gd" type="Script" id=18]
+[ext_resource path="res://Sound/house.wav" type="AudioStream" id=19]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 11.6017, -2.83084, 21.283, -3.39209, 21.1432, -144.261, 11.5121, -144.288 )
@@ -644,6 +645,10 @@ texture = ExtResource( 12 )
 position = Vector2( 2039.74, 410.573 )
 scale = Vector2( 1.63273, 0.570584 )
 texture = ExtResource( 12 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+autoplay = true
 [connection signal="body_entered" from="Niveau1/Area2dRoom/Room1Area2D" to="Niveau1/LightsShadows/ScriptLight1" method="_on_Room1Area2D_body_entered"]
 [connection signal="body_exited" from="Niveau1/Area2dRoom/Room1Area2D" to="Niveau1/LightsShadows/ScriptLight1" method="_on_Room1Area2D_body_exited"]
 [connection signal="body_entered" from="Niveau1/Area2dRoom/Room2Area2D" to="Niveau1/LightsShadows/ScriptLight2" method="_on_Room2Area2D_body_entered"]
