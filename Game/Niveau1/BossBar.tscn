@@ -15,7 +15,6 @@
 [ext_resource path="res://Sprites/Niveau1/boss_attaque.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/kevin_joint.png" type="Texture" id=14]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 9 ) ],
@@ -38,9 +37,29 @@ animations = [ {
 "name": "jump",
 "speed": 4.0
 }, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "drink",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "punch",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_gun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walk",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -51,26 +70,6 @@ animations = [ {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "idle_gun",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "punch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "drink",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_gun",
 "speed": 5.0
 } ]
 

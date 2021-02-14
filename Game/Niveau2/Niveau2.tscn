@@ -1,0 +1,224 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Niveau2/TileSetNiveau2.tres" type="TileSet" id=2]
+[ext_resource path="res://Niveau1/Niveau1.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Niveau1/light.png" type="Texture" id=4]
+[ext_resource path="res://Biere.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Gun.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Niveau1/ScriptLight1.gd" type="Script" id=7]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Joint.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Camera.tscn" type="PackedScene" id=10]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Niveau1/BossBar.tscn" type="PackedScene" id=24]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Niveau1" type="Node2D"]
+position = Vector2( 1735.47, 21.3815 )
+script = ExtResource( 3 )
+
+[node name="Ennemy" parent="." instance=ExtResource( 8 )]
+position = Vector2( -387.651, 495.34 )
+
+[node name="Ennemy2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -284.306, 498.903 )
+
+[node name="Ennemy5" parent="." instance=ExtResource( 8 )]
+position = Vector2( -493.846, 493.24 )
+
+[node name="Ennemy4" parent="." instance=ExtResource( 8 )]
+position = Vector2( -229.561, 497.015 )
+
+[node name="Ennemy3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 225.288, 498.903 )
+
+[node name="Design" type="Node2D" parent="."]
+position = Vector2( 6, 13 )
+scale = Vector2( 0.8, 0.4 )
+z_index = -1
+
+[node name="back" type="TileMap" parent="Design"]
+position = Vector2( 2175.45, -2418.18 )
+scale = Vector2( 2, 3 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 524254, 15, 0, 524272, 16, 0, 458754, 15, 0, 458772, 16, 0, 458790, 15, 0, 458808, 16, 0 )
+
+[node name="banc" type="TileMap" parent="Design"]
+position = Vector2( -23.1705, 322.895 )
+scale = Vector2( 2, 3.5 )
+z_as_relative = false
+mode = 2
+tile_set = ExtResource( 2 )
+occluder_light_mask = 0
+format = 1
+tile_data = PoolIntArray( 327664, 31, 0, 327665, 28, 0, 327669, 31, 0, 327673, 31, 0, 1441795, 28, 0 )
+
+[node name="tree" type="TileMap" parent="Design"]
+position = Vector2( -3.76465, -675.818 )
+scale = Vector2( 0.2, 0.3 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 4587418, 23, 0, 4652906, 23, 0, 4653079, 23, 0, 5177206, 7, 0, 5177207, 7, 0, 5177208, 7, 0, 5177209, 7, 0, 5177210, 7, 0 )
+
+[node name="lampadaire" type="TileMap" parent="Design"]
+position = Vector2( -6.68167, 35.6359 )
+scale = Vector2( 1, 2 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 458727, 29, 0, 458750, 29, 0, 393237, 29, 0, 393259, 29, 0 )
+
+[node name="lampadaire2" type="TileMap" parent="Design"]
+position = Vector2( -6.68167, 35.6359 )
+scale = Vector2( 3, 6 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 131077, 39, 0, 393237, 29, 0, 393259, 29, 0 )
+
+[node name="wall" type="TileMap" parent="Design"]
+position = Vector2( 0, -58.2705 )
+rotation = 1.5708
+scale = Vector2( 4, 3 )
+z_index = 90
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 720899, 7, 0, 720900, 7, 0 )
+
+[node name="bin" type="TileMap" parent="Design"]
+position = Vector2( 2.77075, 63.4703 )
+scale = Vector2( 1.5, 3 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 458735, 33, 0, 393218, 33, 0, 393223, 33, 0 )
+
+[node name="bush" type="TileMap" parent="Design"]
+position = Vector2( -2.64844, 79.4597 )
+scale = Vector2( 2, 3 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 393216, 32, 0, 393218, 32, 0, 393220, 32, 0, 393222, 32, 0 )
+
+[node name="grille" type="TileMap" parent="Design"]
+position = Vector2( -1.48633, 86.2175 )
+scale = Vector2( 1, 5 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 196609, 35, 0, 196610, 35, 0, 196611, 35, 0, 196612, 35, 0, 196613, 35, 0, 196614, 35, 0, 196615, 35, 0, 196616, 35, 0, 196617, 35, 0, 196618, 35, 0, 196619, 35, 0, 196620, 35, 0, 196621, 35, 0, 196622, 35, 0 )
+
+[node name="floor" type="TileMap" parent="Design"]
+position = Vector2( 1116.58, 8.34598 )
+scale = Vector2( 2, 3 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 97, 64 )
+collision_use_kinematic = true
+format = 1
+tile_data = PoolIntArray( 524271, 30, 0, 524272, 30, 0, 524273, 30, 0, 524274, 30, 0, 524275, 30, 0, 524276, 30, 0, 524277, 30, 0, 524278, 30, 0, 524279, 30, 0, 524280, 30, 0, 524281, 30, 0, 524282, 30, 0, 524283, 30, 0, 524284, 30, 0, 524285, 30, 0, 524286, 30, 0, 524287, 30, 0, 458752, 30, 0, 458753, 30, 0, 458754, 30, 0, 458755, 30, 0, 458756, 30, 0, 458757, 30, 0, 458758, 30, 0, 458759, 30, 0, 458760, 30, 0, 458761, 30, 0, 458762, 30, 0, 458763, 30, 0, 458764, 30, 0, 458765, 30, 0, 458766, 30, 0, 458767, 30, 0, 458768, 30, 0, 458769, 30, 0, 458770, 30, 0, 458771, 30, 0, 458772, 30, 0, 458773, 30, 0, 458774, 30, 0 )
+
+[node name="sign" type="TileMap" parent="Design"]
+position = Vector2( -83.5103, -1594.54 )
+scale = Vector2( 3, 9 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 327669, 37, 0 )
+
+[node name="png" type="TileMap" parent="Design"]
+position = Vector2( -30.4596, 381.407 )
+scale = Vector2( 1.5, 3 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 327660, 38, 0, 1376226, 38, 0, 2031596, 38, 0 )
+
+[node name="big bin" type="TileMap" parent="Design"]
+position = Vector2( 64.5903, -4.4545 )
+scale = Vector2( 2, 4 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 327674, 20, 0, 327675, 20, 0, 327676, 20, 0 )
+
+[node name="small pick" type="TileMap" parent="Design"]
+position = Vector2( -17.6975, -318.558 )
+scale = Vector2( 2, 4 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 393216, 36, 0, 393223, 36, 0 )
+
+[node name="passant" type="TileMap" parent="Design"]
+position = Vector2( -144.957, -1315.22 )
+scale = Vector2( 1.5, 2 )
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 1245189, 11, 0, 1245190, 10, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1664.35, 503.127 )
+z_index = 12
+
+[node name="Camera2D" parent="Player" instance=ExtResource( 10 )]
+position = Vector2( -9.17566, -237.214 )
+offset = Vector2( 0, 190 )
+zoom = Vector2( 0.8, 0.8 )
+process_mode = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+
+[node name="GUI" parent="Player/Camera2D/CanvasLayer" instance=ExtResource( 11 )]
+anchor_left = -0.00232267
+anchor_right = 0.997677
+margin_left = 12.6216
+margin_top = 17.7296
+margin_right = -14.3784
+margin_bottom = 110.73
+
+[node name="BossBar" parent="." instance=ExtResource( 24 )]
+position = Vector2( 1873.35, 554.794 )
+z_index = 10
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.27451, 0.27451, 0.27451, 1 )
+
+[node name="ScriptLight1" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="Area2D" type="Area2D" parent="ScriptLight1"]
+position = Vector2( 1248.57, 549.453 )
+scale = Vector2( 1, 5.32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScriptLight1/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Light2D" type="Light2D" parent="Node2D"]
+position = Vector2( -1105.27, 418.713 )
+scale = Vector2( 2.63521, 0.535437 )
+texture = ExtResource( 4 )
+
+[node name="Light2D3" type="Light2D" parent="Node2D"]
+position = Vector2( 63.2478, 413.994 )
+scale = Vector2( 2.63521, 0.535437 )
+texture = ExtResource( 4 )
+
+[node name="Light2D4" type="Light2D" parent="Node2D"]
+position = Vector2( 801.358, 413.994 )
+scale = Vector2( 2.63521, 0.535437 )
+texture = ExtResource( 4 )
+
+[node name="Light2D2" type="Light2D" parent="Node2D"]
+position = Vector2( 63.7297, 406.443 )
+scale = Vector2( 2.63521, 1 )
+texture = ExtResource( 4 )
+
+[node name="Biere" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1267.64, 483.474 )
+
+[node name="Gun" parent="." instance=ExtResource( 6 )]
+position = Vector2( -417.193, 488.927 )
+
+[node name="Joint" parent="." instance=ExtResource( 9 )]
+position = Vector2( 384.151, 462.727 )
+
+[node name="Joint2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 328.592, 508.762 )
+[connection signal="body_entered" from="ScriptLight1/Area2D" to="ScriptLight1" method="_on_Area2D_body_entered"]
