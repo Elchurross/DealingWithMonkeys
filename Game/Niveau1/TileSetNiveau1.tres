@@ -123,7 +123,7 @@ points = PoolVector2Array( 96, 32, 0, 32, 0, 0, 96, 0 )
 5/shape_one_way = false
 5/shape_one_way_margin = 0.0
 5/shapes = [  ]
-5/z_index = 1
+5/z_index = 4
 6/name = "mur_bar.png 6"
 6/texture = ExtResource( 7 )
 6/tex_offset = Vector2( 0, 20 )
@@ -146,8 +146,8 @@ points = PoolVector2Array( 96, 32, 0, 32, 0, 0, 96, 0 )
 7/tile_mode = 0
 7/occluder_offset = Vector2( 0, 0 )
 7/navigation_offset = Vector2( 0, 0 )
-7/shape_offset = Vector2( 0, 5 )
-7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 5 )
+7/shape_offset = Vector2( 0, 12 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 12 )
 7/shape = SubResource( 4 )
 7/shape_one_way = false
 7/shape_one_way_margin = 1.0
@@ -156,7 +156,7 @@ points = PoolVector2Array( 96, 32, 0, 32, 0, 0, 96, 0 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 5 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 12 )
 } ]
 7/z_index = 9
 8/name = "bar_3.png 8"
@@ -356,8 +356,8 @@ points = PoolVector2Array( 96, 32, 0, 32, 0, 0, 96, 0 )
 21/tile_mode = 0
 21/occluder_offset = Vector2( 0, 0 )
 21/navigation_offset = Vector2( 0, 0 )
-21/shape_offset = Vector2( 0, 5 )
-21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 5 )
+21/shape_offset = Vector2( 0, 12 )
+21/shape_transform = Transform2D( 1, 0, 0, 1, 0, 12 )
 21/shape = SubResource( 2 )
 21/shape_one_way = false
 21/shape_one_way_margin = 1.0
@@ -366,7 +366,7 @@ points = PoolVector2Array( 96, 32, 0, 32, 0, 0, 96, 0 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 5 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 12 )
 } ]
 21/z_index = 8
 22/name = "mur_bar.png 22"
@@ -424,7 +424,7 @@ points = PoolVector2Array( 96, 32, 0, 32, 0, 0, 96, 0 )
 25/shape_one_way = false
 25/shape_one_way_margin = 0.0
 25/shapes = [  ]
-25/z_index = 0
+25/z_index = 1
 26/name = "chaise_2(2).png 26"
 26/texture = ExtResource( 26 )
 26/tex_offset = Vector2( 0, 0 )
@@ -460,3 +460,31 @@ points = PoolVector2Array( 96, 32, 0, 32, 0, 0, 96, 0 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 27/z_index = 0
+28/name = "sol_dehors.png 28"
+28/texture = ExtResource( 21 )
+28/tex_offset = Vector2( 0, 0 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 0, 64, 96, 32 )
+28/tile_mode = 0
+28/occluder_offset = Vector2( 0, 0 )
+28/navigation_offset = Vector2( 0, 0 )
+28/shape_offset = Vector2( 0, 0 )
+28/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+28/shape_one_way = false
+28/shape_one_way_margin = 0.0
+28/shapes = [  ]
+28/z_index = 0
+29/name = "sol_dehors.png 29"
+29/texture = ExtResource( 21 )
+29/tex_offset = Vector2( 0, -10 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 0, 64, 96, 32 )
+29/tile_mode = 0
+29/occluder_offset = Vector2( 0, 0 )
+29/navigation_offset = Vector2( 0, 0 )
+29/shape_offset = Vector2( 0, 0 )
+29/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+29/shape_one_way = false
+29/shape_one_way_margin = 0.0
+29/shapes = [  ]
+29/z_index = 0
