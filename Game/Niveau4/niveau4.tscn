@@ -50,6 +50,7 @@ extents = Vector2( 13.5857, 10 )
 position = Vector2( 4827.85, 531.448 )
 z_index = 100
 script = ExtResource( 18 )
+reference_path = "res://endscreen.tscn"
 
 [node name="Ennemy" parent="." instance=ExtResource( 6 )]
 position = Vector2( 4318.78, 541.06 )
