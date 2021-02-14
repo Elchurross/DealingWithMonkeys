@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Niveau1/spot.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Niveau1/light.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Niveau1/projeceur_1.png" type="Texture" id=5]
+
+[node name="Light2D" type="Light2D"]
+position = Vector2( 25.7921, 34.1291 )
+texture = ExtResource( 3 )
+color = Color( 0.0784314, 0.0627451, 0.0627451, 1 )
+energy = 2.4
+shadow_enabled = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -6.34961, 0.793701 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+z_index = 1
+texture = ExtResource( 5 )
