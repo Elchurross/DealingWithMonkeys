@@ -27,29 +27,9 @@ animations = [ {
 "name": "joint",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_gun",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "hurt",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "jump",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "idle_gun",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
@@ -57,19 +37,39 @@ animations = [ {
 "name": "walk",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ) ],
-"loop": true,
+"loop": false,
 "name": "drink",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "punch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "walk_gun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "idle_gun",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "jump",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "dead",
 "speed": 5.0
 } ]
 
@@ -106,6 +106,7 @@ disabled = true
 one_way_collision = true
 
 [node name="Cooldown" type="Timer" parent="."]
+one_shot = true
 
 [node name="Boost" type="Timer" parent="."]
 
