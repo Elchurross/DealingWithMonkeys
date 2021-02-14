@@ -94,7 +94,7 @@ scale = Vector2( 4, 3 )
 z_index = 90
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( 720899, 7, 0, 720900, 7, 0 )
+tile_data = PoolIntArray( -4259838, 6, 0, -4259837, 6, 0, -4259836, 6, 0, 720899, 7, 0, 720900, 7, 0 )
 
 [node name="wall2" type="TileMap" parent="Design"]
 position = Vector2( 132.144, -324.915 )
@@ -311,7 +311,7 @@ script = ExtResource( 18 )
 position = Vector2( 961.25, 509.903 )
 
 [node name="Karim" parent="." instance=ExtResource( 12 )]
-position = Vector2( 7908.16, 479.048 )
+position = Vector2( 7901.23, 479.048 )
 reference_path = "res://MainScene_2.tscn"
 
 [node name="Joint" parent="." instance=ExtResource( 9 )]
@@ -351,16 +351,16 @@ position = Vector2( 7154.53, 487.754 )
 position = Vector2( 7886.59, 505.438 )
 
 [node name="Ennemy3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 7901.33, 501.857 )
+position = Vector2( 7820.33, 501.857 )
 
 [node name="Ennemy4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 7909.9, 500.925 )
+position = Vector2( 7710.2, 505.335 )
 
 [node name="Ennemy5" parent="." instance=ExtResource( 8 )]
 position = Vector2( 7883.17, 502.323 )
 
 [node name="Ennemy6" parent="." instance=ExtResource( 8 )]
-position = Vector2( 7860.93, 504.705 )
+position = Vector2( 7860.93, 497.705 )
 
 [node name="Ennemy7" parent="." instance=ExtResource( 8 )]
 position = Vector2( 7870.77, 503.772 )
