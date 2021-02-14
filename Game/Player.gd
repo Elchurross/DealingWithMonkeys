@@ -13,7 +13,7 @@ var flip : bool = false
 onready var sprite : AnimatedSprite = get_node("Kevin")
 onready var cooldown : Timer = get_node("Cooldown")
 onready var boost : Timer = get_node("Boost")
-
+export var reference_path = ""
 var jumping : bool = false
 var talking : bool = false
 var dead : bool = false
