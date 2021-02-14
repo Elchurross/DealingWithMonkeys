@@ -1,11 +1,11 @@
-extends Area2D
+extends Node2D
 
 var Box = preload("res://DialogBox.tscn")
 var playerNear : bool = false
 var box 
 var player
 var talking = true
-const dialog = ["nice to see you", "here is another test line", "yes, i'm a dealer gorilla, you are not halucinating", "Goodbye World?"]
+const dialog = ["Wow! Your fighting skill is actually crazy!","Half junkie, half ninja!","Careful, I just walked passed someone who looked just like Sideshow Bob!","Take a puff"]
 
 func _process(_delta):
 	if box == null and player != null and talking:
@@ -19,7 +19,7 @@ func _process(_delta):
 			box.position = get_node("Position2D").position
 			add_child(box)
 
-func _on_NPC_body_entered(body):
+func _on_NPC_body_entered(body): 
 	if body.is_in_group("Player"):
 		player = body
 		playerNear = true

@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var health : int = 600
+var health : int = 1500
 var gravity : int = 900
 var speed : int = 150
 var velocity : Vector2 =  Vector2.ZERO

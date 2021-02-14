@@ -42,9 +42,10 @@ margin_bottom = 161.374
 rect_scale = Vector2( 4.16593, 4.87411 )
 focus_neighbour_top = NodePath("../lauch_button")
 focus_neighbour_bottom = NodePath("../Exit_button")
-text = "Options"
+text = "Help"
 reference_path = "res://option_scene.tscn"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 1166.18, -102.103 )
 stream = ExtResource( 3 )
 autoplay = true

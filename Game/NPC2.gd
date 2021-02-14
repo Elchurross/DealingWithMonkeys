@@ -5,7 +5,7 @@ var playerNear : bool = false
 var box 
 var player
 var talking = true
-const dialog = ["nice to see you", "here is another test line", "yes, i'm a dealer gorilla, you are not halucinating", "Goodbye World?"]
+const dialog = ["Hey boy", "You got chucked out of the TB", "What a shame, I think that you must fight for your life!", "Get home safely !"]
 
 func _process(_delta):
 	if box == null and player != null and talking:
