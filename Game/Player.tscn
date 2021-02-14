@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Sprites/kevin_idle.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Sprites/kevin_walk_gun2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/kevin_joint.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/kevin_hurt.png" type="Texture" id=14]
+[ext_resource path="res://Sound/kevin_hurt.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sound/kevin_die.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sound/gun sound.wav" type="AudioStream" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,10 +30,30 @@ animations = [ {
 "name": "joint",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "punch",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "hurt",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "jump",
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
@@ -42,34 +65,14 @@ animations = [ {
 "name": "drink",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "punch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "walk_gun",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "idle_gun",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
-"name": "fall",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "jump",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "dead",
+"name": "walk_gun",
 "speed": 5.0
 } ]
 
@@ -115,4 +118,13 @@ position = Vector2( 27.7621, 3.39222 )
 
 [node name="PosShootLeft" type="Position2D" parent="."]
 position = Vector2( -33.4345, 3.57728 )
+
+[node name="AudioHurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 15 )
+
+[node name="AudioDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+
+[node name="AudioGun" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 17 )
 [connection signal="body_entered" from="PunchArea" to="." method="_on_PunchArea_body_entered"]

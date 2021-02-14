@@ -13,6 +13,7 @@ const Biere = preload("res://Biere.tscn")
 const Joints = preload("res://Joint.tscn")
 const Gun = preload("res://Gun.tscn")
 
+var dead : bool = false
 var ready : bool = false
 var target
 var flip : bool = true
@@ -40,11 +41,14 @@ func hurt(damage):
 			var gun = Gun.instance()
 			get_parent().call_deferred("add_child", gun)
 			gun.position = global_position
-		
+		if !dead:
+			get_node("AudioDeath").play()
+			dead = true
 	else:
 		health -= damage
 		cooldown.start(0.5)
 		get_node("Jordan").play("hurt")
+		get_node("AudioHurt").play()
 
 func _physics_process(delta):
 	velocity.x = 0

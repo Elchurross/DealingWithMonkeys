@@ -4,6 +4,7 @@ var health : int = 600
 var gravity : int = 900
 var speed : int = 150
 var velocity : Vector2 =  Vector2.ZERO
+var dead : bool = false
 
 onready var sprite : AnimatedSprite = get_node("karim")
 onready var cooldown : Timer = get_node("Cooldown")
@@ -32,10 +33,14 @@ func hurt(damage):
 		var joint = Joints.instance()
 		get_parent().call_deferred("add_child", joint)
 		joint.position = global_position
+		if !dead:
+			get_node("AudioDeath").play()
+			dead = true
 	else:
 		health -= damage
 		cooldown.start(0.5)
 		get_node("karim").play("hurt")
+		get_node("AudioHurt").play()
 
 func _physics_process(delta):
 	velocity.x = 0

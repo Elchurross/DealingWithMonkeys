@@ -16,6 +16,7 @@ onready var boost : Timer = get_node("Boost")
 
 var jumping : bool = false
 var talking : bool = false
+var dead : bool = false
 const Bullet = preload("res://Bullet.tscn")
 var ammo : int = 0
 var tesson : int = 5
@@ -25,7 +26,7 @@ var maxTesson : int = 10
 func _ready():
 	cooldown.one_shot = true
 	boost.one_shot = true
-	
+
 func smokeJoint():
 	get_node("Kevin").play("joint")
 	cooldown.start(0.5)
@@ -45,10 +46,14 @@ func hurt(damage):
 	if health <= damage:
 		health = 0
 		get_node("Kevin").play("dead")
+		if !dead:
+			get_node("AudioDeath").play()
+			dead = true
 	else:
 		health -= damage
 		cooldown.start(0.5)
 		get_node("Kevin").play("hurt")
+		get_node("AudioHurt").play()
 
 func _physics_process(delta):
 	velocity.x = 0
@@ -102,6 +107,7 @@ func _physics_process(delta):
 				bullet.position = get_node("PosShootRight").global_position
 			else:
 				bullet.position = get_node("PosShootLeft").global_position
+			get_node("AudioGun").play()
 			ammo -= 1
 	
 	if Input.is_action_just_pressed("throw") and tesson > 0:
