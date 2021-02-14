@@ -42,6 +42,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_vertical_guides_": [  ]
 }
+reference_path = "res://MainScene.tscn"
 
 [node name="NPC" parent="." instance=ExtResource( 16 )]
 position = Vector2( 1557.49, 535.645 )
