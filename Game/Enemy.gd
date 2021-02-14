@@ -27,6 +27,8 @@ func hurt(damage):
 		get_node("Jordan").play("dead")
 		set_collision_layer_bit(0, false)
 		set_collision_mask_bit(0, false)
+		set_collision_layer_bit(5, true)
+		set_collision_mask_bit(5, true)
 		randomize()
 		var drop = rand_range(0, 15)
 		if drop <= 4:
@@ -79,6 +81,7 @@ func _physics_process(delta):
 	
 	if target != null:
 		if abs(target.position.x - position.x) < 50 and ready:
+			get_node("AudioPunch").play()
 			get_node("AttackArea/CollisionShape2D").disabled = false
 			get_node("Jordan").play("attack")
 			cooldown.start(0.2)

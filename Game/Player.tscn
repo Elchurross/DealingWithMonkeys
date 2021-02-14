@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Sprites/kevin_idle.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -19,6 +19,9 @@
 [ext_resource path="res://Sound/gun sound.wav" type="AudioStream" id=17]
 [ext_resource path="res://Sound/throwing.wav" type="AudioStream" id=18]
 [ext_resource path="res://Sound/punch.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sound/joint.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sound/drink.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sound/gun_pickup.wav" type="AudioStream" id=22]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -135,4 +138,13 @@ stream = ExtResource( 18 )
 
 [node name="AudioPunch" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 19 )
+
+[node name="AudioPickupGun" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 22 )
+
+[node name="AudioDrink" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 21 )
+
+[node name="AudioJoint" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
 [connection signal="body_entered" from="PunchArea" to="." method="_on_PunchArea_body_entered"]

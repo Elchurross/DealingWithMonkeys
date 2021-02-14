@@ -15,7 +15,9 @@ func _process(_delta):
 				page += 1
 				text.set_bbcode(dialog[page])
 				text.set_visible_characters(0)
+				get_node("AudioBop").play()
 			else:
+				get_node("AudioBop").play()
 				queue_free()
 		else:
 			text.set_visible_characters(text.get_total_character_count())

@@ -13,6 +13,7 @@ func _process(_delta):
 		talking = false
 	if playerNear and Input.is_action_just_pressed("Interact"):
 		if !player.talking:
+			get_node("AudioBop").play()
 			player.talking = true
 			talking = true
 			box = Box.instance()

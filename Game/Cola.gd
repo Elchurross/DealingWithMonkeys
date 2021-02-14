@@ -30,6 +30,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Tesson_body_entered(body):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") or body.is_in_group("Ennemy"):
 			body.hurt(35)
 	queue_free()

@@ -29,17 +29,20 @@ func _ready():
 
 func smokeJoint():
 	get_node("Kevin").play("joint")
+	get_node("AudioJoint").play()
 	cooldown.start(0.5)
 	boost.stop()
 	boost.start(100)
 
 func drinkBeer():
 	get_node("Kevin").play("drink")
+	get_node("AudioDrink").play()
 	health = maxHealth if health + beer > maxHealth else health + beer
 	cooldown.start(0.3)
 	tesson = maxTesson if tesson + 1 > maxTesson else tesson + 1
 	
 func addAmmo(ammount):
+	get_node("AudioPickupGun").play()
 	ammo += ammount
 
 func hurt(damage):
