@@ -8,7 +8,7 @@ var talking = true
 var used = false
 export var reference_path = ""
 var working = true
-const dialog = ["Rafiki: Hello, how are you?", "Kevin: i feel awful. By the way, who are you? And where am i?", "Rafiki: This morning i found you passed out, you're in my house", "Kevin: I don't remember what the hell i did yesterday", "Rafiki: if you want i can give you something to help you remember. But careful it's a litle bit expensive", "Kevin: Sure, i don't see why not. Thanks man!"]
+const dialog = ["Rafiki: You're back, do you rememeber what you did yesterday?", "Kevin: Yes, your stuff is amazing!", "Rafiki: Good, i recently got something new, do you want to test it.", "Kevin: Hell yeah! I want to try everything you have."]
 
 func _process(_delta):
 	if box == null and player != null and talking:
