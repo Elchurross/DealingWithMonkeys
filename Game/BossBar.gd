@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var health : int = 400
 var gravity : int = 900
+export var reference_path = ""
 var speed : int = 190
 var velocity : Vector2 =  Vector2.ZERO
 
@@ -52,6 +53,8 @@ func hurt(damage):
 			get_parent().add_child(gun)
 			gun.position = global_position
 		get_node("Death").play()
+		cooldown.start(5.1)
+		get_tree().change_scene(reference_path)
 		
 	else:
 		health -= damage

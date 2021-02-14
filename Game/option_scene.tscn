@@ -35,7 +35,7 @@ margin_top = 529.113
 margin_right = 876.353
 margin_bottom = 549.113
 rect_scale = Vector2( 4.41205, 3.1377 )
-reference_path = ""
+reference_path = "res://menu.tscn"
 start_focused = false
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

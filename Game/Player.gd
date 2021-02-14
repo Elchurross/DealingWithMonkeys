@@ -21,7 +21,7 @@ const Bullet = preload("res://Bullet.tscn")
 var ammo : int = 0
 var tesson : int = 5
 const Tesson = preload("res://Tesson.tscn")
-var maxTesson : int = 10
+var maxTesson : int = 100
 var cdAttack = 0
 var inCd = false
 

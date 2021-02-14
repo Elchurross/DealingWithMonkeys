@@ -5,7 +5,7 @@ var gravity : int = 900
 var speed : int = 150
 var velocity : Vector2 =  Vector2.ZERO
 var dead : bool = false
-
+export var reference_path = ""
 onready var sprite : AnimatedSprite = get_node("karim")
 onready var cooldown : Timer = get_node("Cooldown")
 onready var attackTimer : Timer = get_node("AttackTimer")
@@ -36,6 +36,8 @@ func hurt(damage):
 		if !dead:
 			get_node("AudioDeath").play()
 			dead = true
+			cooldown.start(5.1)
+			get_tree().change_scene(reference_path)
 	else:
 		health -= damage
 		cooldown.start(0.5)
