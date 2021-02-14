@@ -329,6 +329,7 @@ collision/safe_margin = 0.001
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1674.08, 516.948 )
+reference_path = "res://deadscreen.tscn"
 
 [node name="Camera2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( -1674.08, 514.703 )
