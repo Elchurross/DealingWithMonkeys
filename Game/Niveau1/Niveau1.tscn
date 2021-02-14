@@ -128,6 +128,7 @@ margin_bottom = 110.73
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -111.312, 523.433 )
 z_index = 100
+reference_path = "res://deadscreen.tscn"
 
 [node name="Design" type="Node2D" parent="."]
 position = Vector2( 181.597, 3.33878 )

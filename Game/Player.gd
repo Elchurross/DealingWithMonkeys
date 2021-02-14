@@ -54,6 +54,7 @@ func hurt(damage):
 		if !dead:
 			get_node("AudioDeath").play()
 			dead = true
+			get_tree().change_scene(reference_path)
 	else:
 		health -= damage
 		cooldown.start(0.5)

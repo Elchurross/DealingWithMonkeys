@@ -81,6 +81,7 @@ reference_path = "res://Niveau3/niveau3.tscn"
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 68.4436, 282.296 )
 scale = Vector2( 1.57462, 1.32562 )
+reference_path = "res://deadscreen.tscn"
 
 [node name="Camera2D" parent="Player" instance=ExtResource( 3 )]
 position = Vector2( 12.84, 57.9396 )

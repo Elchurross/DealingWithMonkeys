@@ -25,22 +25,22 @@ polygon = PoolVector2Array( 11.6017, -2.83084, 21.283, -3.39209, 21.1432, -144.2
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 9.271, -146.135, 19.6538, -146.415, 19.0029, 0.778534, 9.15869, 0.945374 )
 
-[sub_resource type="OccluderPolygon2D" id=8]
+[sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( 21.1163, -144.57, 20.9529, 109.662, 21.0931, 130.147, 11.5522, 130.287, 11.2716, 123.973, 11.6925, -144.436 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( -1705.92, -178.798, -1705.92, -184.144, -27.5245, -185.044, -36.9058, -178.781 )
 
-[sub_resource type="OccluderPolygon2D" id=4]
+[sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( -1706.58, -184.688, -1706.33, -178.388, -753.889, -178.804, -754.087, -184.36 )
 
-[sub_resource type="OccluderPolygon2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=6]
 polygon = PoolVector2Array( -1753.35, -183.648, -1668.42, -182.855, -1668.42, 6.83975, -1759.7, 6.83975 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 0.730724, 9.75424 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 13.5857, 10 )
 
 [node name="Node2D" type="Node2D"]
@@ -317,7 +317,7 @@ texture = ExtResource( 24 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Niveau1/LightsShadows/ShadowLeft2"]
 position = Vector2( 73.5432, 66.8814 )
 z_index = 11
-occluder = SubResource( 8 )
+occluder = SubResource( 3 )
 
 [node name="ShadowRoof1" type="Node2D" parent="Niveau1/LightsShadows"]
 position = Vector2( 1205.1, 424.208 )
@@ -331,7 +331,7 @@ texture = ExtResource( 24 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Niveau1/LightsShadows/ShadowRoof1"]
 position = Vector2( 77.1525, 113.225 )
 z_index = 11
-occluder = SubResource( 3 )
+occluder = SubResource( 4 )
 
 [node name="ShadowRoof2" type="Node2D" parent="Niveau1/LightsShadows"]
 position = Vector2( 3457.76, 423.753 )
@@ -345,7 +345,7 @@ texture = ExtResource( 24 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Niveau1/LightsShadows/ShadowRoof2"]
 position = Vector2( 77.1525, 113.225 )
 z_index = 11
-occluder = SubResource( 4 )
+occluder = SubResource( 5 )
 
 [node name="ShadowLeft1" type="Node2D" parent="Niveau1/LightsShadows"]
 position = Vector2( 1165.36, 468.392 )
@@ -359,7 +359,7 @@ texture = ExtResource( 24 )
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Niveau1/LightsShadows/ShadowLeft1"]
 position = Vector2( 75.4016, 65.8771 )
 z_index = 11
-occluder = SubResource( 5 )
+occluder = SubResource( 6 )
 
 [node name="ScriptLight1" type="Node2D" parent="Niveau1/LightsShadows"]
 visible = false
@@ -383,7 +383,7 @@ scale = Vector2( 1194.43, 13.7259 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Niveau1/Area2dRoom/Room1Area2D"]
 position = Vector2( 0.594604, 0.0558853 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Room2Area2D" type="Area2D" parent="Niveau1/Area2dRoom"]
 position = Vector2( 1933.08, 489.546 )
@@ -392,7 +392,7 @@ scale = Vector2( 700, 13.726 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Niveau1/Area2dRoom/Room2Area2D"]
 position = Vector2( 0.521168, 0.0295982 )
 scale = Vector2( 0.0505221, 0.92756 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Room3Area2D" type="Area2D" parent="Niveau1/Area2dRoom"]
 position = Vector2( 1933.08, 489.546 )
@@ -401,7 +401,7 @@ scale = Vector2( 700, 13.726 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Niveau1/Area2dRoom/Room3Area2D"]
 position = Vector2( 1.90302, 0.183971 )
 scale = Vector2( 0.0505221, 0.92756 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="Niveau2" type="Node2D" parent="."]
 position = Vector2( 5482.57, 91.443 )
