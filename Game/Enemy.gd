@@ -49,12 +49,12 @@ func hurt(damage):
 
 func _physics_process(delta):
 	velocity.x = 0
+	get_node("AttackArea/CollisionShape2D").disabled = true
 	if !cooldown.is_stopped() or health <= 0:
 		velocity = move_and_slide(velocity, Vector2.UP)
 		velocity.y += gravity * delta
 		return
 	
-	get_node("AttackArea/CollisionShape2D").disabled = true
 	
 	if target != null:
 		if abs(target.position.x - position.x) > 50:
