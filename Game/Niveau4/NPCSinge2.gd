@@ -5,6 +5,9 @@ var playerNear : bool = false
 var box 
 var player
 var talking = true
+var used = false
+var working = true
+export var reference_path = ""
 const dialog = ["Rafiki: Kevin... Kevin... Kevin...", "We spent some great time together, right?", "Kevin: Yeah, i guess *Hips* so.", "What d'you want?", "Rafiki: I see that you are way too drunk to understand anything.", "Let's say that you saw something that you should have never seen", "Kevin: YOUR MASSIVE DI..?!", "Rafiki: Imma gonna stop you right there cause", "a human should never see the future.", "Now i don't have a choice i have to kill you.", "Aniway i saw in the future that the game jam rewiewer are gonna say this game is shit", "Goodbye, Kevin."]
 
 func _process(_delta):
@@ -18,6 +21,10 @@ func _process(_delta):
 			box = Box.instance()
 			box.position = get_node("Position2D").position
 			add_child(box)
+			used = true
+
+	if (used == true and talking == false and working == true):
+		get_tree().change_scene(reference_path) 
 
 func _on_NPC_body_entered(body):
 	if body.is_in_group("Player"):
