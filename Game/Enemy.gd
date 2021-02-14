@@ -27,19 +27,18 @@ func hurt(damage):
 		set_collision_layer_bit(0, false)
 		set_collision_mask_bit(0, false)
 		randomize()
-		var drop = rand_range(0, 10)
-		print (drop)
+		var drop = rand_range(0, 15)
 		if drop <= 4:
 			var biere = Biere.instance()
-			get_parent().add_child(biere)
+			get_parent().call_deferred("add_child", biere)
 			biere.position = global_position
 		elif drop <= 6:
 			var joint = Joints.instance()
-			get_parent().add_child(joint)
+			get_parent().call_deferred("add_child", joint)
 			joint.position = global_position
 		elif drop <= 7:
 			var gun = Gun.instance()
-			get_parent().add_child(gun)
+			get_parent().call_deferred("add_child", gun)
 			gun.position = global_position
 		
 	else:
@@ -54,7 +53,6 @@ func _physics_process(delta):
 		velocity = move_and_slide(velocity, Vector2.UP)
 		velocity.y += gravity * delta
 		return
-	
 	
 	if target != null:
 		if abs(target.position.x - position.x) > 50:
@@ -107,3 +105,8 @@ func _on_AttackTimer_timeout():
 func _on_AttackArea_body_entered(body):
 	if body.is_in_group("Player"):
 		body.hurt(20)
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	if health <= 0:
+		queue_free()

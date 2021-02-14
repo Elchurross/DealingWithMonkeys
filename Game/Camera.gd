@@ -18,5 +18,5 @@ func _process(_delta):
 	if player.get_global_position().x < old_global_pos:
 		global_position.x = old_global_pos
 	else:
-		global_position.x = player.get_global_position().x
+		global_position.x = player.get_global_position().x + 175
 	pass

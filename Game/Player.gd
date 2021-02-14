@@ -53,6 +53,8 @@ func hurt(damage):
 func _physics_process(delta):
 	velocity.x = 0
 	if !cooldown.is_stopped() or health <= 0 or talking:
+		if talking:
+			get_node("Kevin").play("idle")
 		velocity = move_and_slide(velocity, Vector2.UP)
 		velocity.y += gravity * delta
 		return
@@ -107,6 +109,8 @@ func _physics_process(delta):
 		cooldown.start(0.2)
 		var t = Tesson.instance()
 		t.direction = flip
+		if !boost.is_stopped():
+			t.boost = true
 		get_parent().add_child(t)
 		if !flip:
 			t.position = get_node("PosShootRight").global_position

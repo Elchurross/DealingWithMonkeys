@@ -3,9 +3,14 @@ extends Area2D
 var speedx : int = 250
 var speedy : int = 475
 var direction : bool = true
-var boost : bool = false
 var rot : float = 90
-onready var sprite : Sprite = get_node("tesson")
+onready var sprite : Sprite = get_node("cola")
+
+func _init():
+	randomize()
+	speedx = rand_range(200, 300)
+	randomize()
+	speedy = rand_range(400, 550)
 
 func _physics_process(delta):
 	var velocity = Vector2(speedx * delta, -speedy * delta)
@@ -25,9 +30,6 @@ func _on_VisibilityNotifier2D_screen_exited():
 
 
 func _on_Tesson_body_entered(body):
-	if body.is_in_group("Ennemy"):
-		if boost:
-			body.hurt(60)
-		else:
-			body.hurt(30)
+	if body.is_in_group("Player"):
+			body.hurt(35)
 	queue_free()
