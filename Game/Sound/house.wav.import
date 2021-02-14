@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/house.wav-68e2fe70766ea686b6d3d86b3ef59960.sample"
+
+[deps]
+
+source_file="res://Sound/house.wav"
+dest_files=[ "res://.import/house.wav-68e2fe70766ea686b6d3d86b3ef59960.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
