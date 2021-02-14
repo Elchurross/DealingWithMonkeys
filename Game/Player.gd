@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var maxHealth : int = 100
 var health : int = maxHealth
-var beer : int = 20
+var beer : int = 10
 
 var speed : int = 200
 var jumpForce : int = 420

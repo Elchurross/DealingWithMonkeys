@@ -18,13 +18,14 @@ func _ready():
 func _physics_process(_delta):
 	var raycast_node = get_node("RayCast2D")
 	if raycast_node.is_colliding():
-		var distance =  self.position.distance_to(raycast_node.get_collision_point())
-		if (distance < 20):
-			isUp = true
-			isDown = false
-		elif (distance > 27 and isUp == true):
-			isUp = false
-			isDown = true
+		if !raycast_node.get_collider().is_in_group("Player"):
+			var distance =  self.position.distance_to(raycast_node.get_collision_point())
+			if (distance < 26):
+				isUp = true
+				isDown = false
+			elif (distance > 35 and isUp == true):
+				isUp = false
+				isDown = true
 	else:
 		isDown = true
 		isUp = false
@@ -33,11 +34,9 @@ func _physics_process(_delta):
 	elif (isUp) :
 		var _value = move_and_slide(Vector2(0,-1) * speed)
 
-	pass
 
 func _on_Area2D_body_entered(body):
 	if (body.get_name() == "Player"):
-		var player = get_owner().get_node("Player")
-		player.smokeJoint()
+		body.smokeJoint()
 		queue_free()
 	pass # Replace with function body.

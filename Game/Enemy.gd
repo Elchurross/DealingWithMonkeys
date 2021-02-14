@@ -9,6 +9,10 @@ onready var sprite : AnimatedSprite = get_node("Jordan")
 onready var cooldown : Timer = get_node("Cooldown")
 onready var attackTimer : Timer = get_node("AttackTimer")
 
+const Biere = preload("res://Biere.tscn")
+const Joints = preload("res://Joint.tscn")
+const Gun = preload("res://Gun.tscn")
+
 var ready : bool = false
 var target
 var flip : bool = true
@@ -22,6 +26,22 @@ func hurt(damage):
 		get_node("Jordan").play("dead")
 		set_collision_layer_bit(0, false)
 		set_collision_mask_bit(0, false)
+		randomize()
+		var drop = rand_range(0, 10)
+		print (drop)
+		if drop <= 4:
+			var biere = Biere.instance()
+			get_parent().add_child(biere)
+			biere.position = global_position
+		elif drop <= 6:
+			var joint = Joints.instance()
+			get_parent().add_child(joint)
+			joint.position = global_position
+		elif drop <= 7:
+			var gun = Gun.instance()
+			get_parent().add_child(gun)
+			gun.position = global_position
+		
 	else:
 		health -= damage
 		cooldown.start(0.5)
