@@ -12,6 +12,7 @@
 [ext_resource path="res://tilesetSolChambre.tres" type="TileSet" id=11]
 [ext_resource path="res://tilesetMurChambre.tres" type="TileSet" id=12]
 [ext_resource path="res://NPC.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Sound/house.wav" type="AudioStream" id=14]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 9 )
@@ -99,3 +100,7 @@ margin_top = 13.0
 margin_right = -11.0
 margin_bottom = 106.0
 rect_rotation = -0.0582678
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+autoplay = true

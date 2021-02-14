@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Niveau2/TileSetNiveau2.tres" type="TileSet" id=1]
 [ext_resource path="res://Niveau1/TileSetNiveau1.tres" type="TileSet" id=2]
+[ext_resource path="res://Sound/house.wav" type="AudioStream" id=3]
 [ext_resource path="res://Niveau1/ScriptLight1.gd" type="Script" id=4]
 [ext_resource path="res://Niveau1/ScriptLight2.gd" type="Script" id=5]
 [ext_resource path="res://Niveau1/ScriptLight3.gd" type="Script" id=6]
@@ -645,6 +646,10 @@ texture = ExtResource( 25 )
 position = Vector2( 2039.74, 410.573 )
 scale = Vector2( 1.63273, 0.570584 )
 texture = ExtResource( 25 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 [connection signal="body_entered" from="Niveau1/Area2dRoom/Room1Area2D" to="Niveau1/LightsShadows/ScriptLight1" method="_on_Room1Area2D_body_entered"]
 [connection signal="body_exited" from="Niveau1/Area2dRoom/Room1Area2D" to="Niveau1/LightsShadows/ScriptLight1" method="_on_Room1Area2D_body_exited"]
 [connection signal="body_entered" from="Niveau1/Area2dRoom/Room2Area2D" to="Niveau1/LightsShadows/ScriptLight2" method="_on_Room2Area2D_body_entered"]
