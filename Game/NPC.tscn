@@ -19,7 +19,7 @@ texture = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( -64, -320 )
+position = Vector2( -384, -320 )
 
 [node name="AudioBop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )

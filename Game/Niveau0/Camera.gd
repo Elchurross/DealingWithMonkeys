@@ -8,7 +8,7 @@ var old_global_pos = Vector2(171,350)
 var new_global_pos = Vector2(0,0)
 var maxXNiveau = 10000
 var minY = 200
-var minX = -1300
+var minX = -200
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
