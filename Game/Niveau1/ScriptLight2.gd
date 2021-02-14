@@ -16,7 +16,7 @@ func _on_Room2Area2D_body_entered(body):
 	lightsOut += get_tree().get_nodes_in_group("LOut2")
 	if body.is_in_group("Player"):
 		for light in lights:
-			light.set_energy(3)
+			light.set_energy(4)
 		for light in lightsOut:
 			light.set_energy(0)
 	

@@ -22,6 +22,8 @@ var ammo : int = 0
 var tesson : int = 5
 const Tesson = preload("res://Tesson.tscn")
 var maxTesson : int = 10
+var cdAttack = 0
+var inCd = false
 
 func _ready():
 	cooldown.one_shot = true
@@ -59,6 +61,11 @@ func hurt(damage):
 		get_node("AudioHurt").play()
 
 func _physics_process(delta):
+	if (inCd == true):
+		cdAttack += delta
+	if (cdAttack >= 0.6):
+		cdAttack = 0
+		inCd = false
 	velocity.x = 0
 	if !cooldown.is_stopped() or health <= 0 or talking:
 		if talking:
@@ -97,12 +104,15 @@ func _physics_process(delta):
 	if !is_on_floor() and !jumping:
 		get_node("Kevin").play("fall")
 	
-	if Input.is_action_just_pressed("punch"):
+	if Input.is_action_just_pressed("punch") and inCd == false:
 		if ammo == 0:
 			get_node("PunchArea/CollisionShape2D").disabled = false
 			get_node("Kevin").play("punch")
 			get_node("AudioPunch").play()
-			cooldown.start(0.3)
+			cooldown.start(0.1)
+			inCd = true
+			
+			
 		else:
 			var bullet = Bullet.instance()
 			bullet.direction = flip

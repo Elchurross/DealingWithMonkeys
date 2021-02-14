@@ -12,7 +12,7 @@ func _ready():
 	var number_label_tesson = get_node("HBoxContainer/Counters/TESSONCount2/Background/Number")
 	var number_label_ammo = get_node("HBoxContainer/AMMOCount/Count2/Background/Number")
 	var bar = get_node("HBoxContainer/Bars/Bar/Gauge")
-	var player = get_owner().get_node("Player")
+	var player = get_tree().get_nodes_in_group("Player")[0]
 	bar.max_value = player.maxHealth
 	bar.value = player.health
 	number_label_hp.text = str(player.maxHealth)
@@ -29,7 +29,7 @@ func _process(_delta):
 	var number_label_tesson = get_node("HBoxContainer/Counters/TESSONCount2/Background/Number")
 	var bar = get_node("HBoxContainer/Bars/Bar/Gauge")
 	var number_label_ammo = get_node("HBoxContainer/AMMOCount/Count2/Background/Number")
-	var player = get_owner().get_node("Player")
+	var player = get_tree().get_nodes_in_group("Player")[0]
 
 	bar.value = player.health
 	number_label_hp.text = str(player.health)

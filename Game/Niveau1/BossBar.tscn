@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Sprites/Niveau1/boss_aieaieaie.png" type="Texture" id=1]
 [ext_resource path="res://BossBar.gd" type="Script" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Sprites/kevin_walk_gun2.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/Niveau1/boss_attaque.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/kevin_joint.png" type="Texture" id=14]
+[ext_resource path="res://Sound/boss1.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sound/Boss1death.wav" type="AudioStream" id=16]
+[ext_resource path="res://Niveau1/BossNpc.tscn" type="PackedScene" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -32,35 +35,25 @@ animations = [ {
 "name": "hurt",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "walk",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": false,
-"name": "jump",
-"speed": 4.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "punch",
+"name": "dead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "punch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "drink",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "walk_gun",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": false,
+"name": "jump",
+"speed": 4.0
 }, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
@@ -70,6 +63,16 @@ animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "drink",
 "speed": 5.0
 } ]
 
@@ -91,13 +94,17 @@ collision_layer = 33
 collision_mask = 33
 script = ExtResource( 2 )
 
+[node name="NPC" parent="." instance=ExtResource( 17 )]
+scale = Vector2( 2.74286, 1.56667 )
+script = null
+
 [node name="Kevin" type="AnimatedSprite" parent="."]
 position = Vector2( -0.594604, 2.56763 )
 frames = SubResource( 1 )
-animation = "punch"
+animation = "dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.3355, 9.37223 )
+position = Vector2( 3.3355, 4.17534 )
 shape = SubResource( 2 )
 
 [node name="Cooldown" type="Timer" parent="."]
@@ -117,6 +124,15 @@ scale = Vector2( 1, 2.67115 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2( -12.2793, -2.99863 )
 shape = SubResource( 4 )
+
+[node name="Death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+pitch_scale = 1.23
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 15 )
+[connection signal="body_entered" from="NPC" to="." method="_on_NPC_body_entered"]
+[connection signal="body_exited" from="NPC" to="." method="_on_NPC_body_exited"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_AttackTimer_timeout"]
 [connection signal="body_entered" from="TriggerArea" to="." method="_on_TriggerArea_body_entered"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]

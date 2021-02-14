@@ -7,6 +7,7 @@ func _ready() -> void:
 	pause = false
 
 func _process(delta:float) -> void:
+
 	if !pause:
 		var escape:bool = Input.is_action_just_pressed("return")
 
