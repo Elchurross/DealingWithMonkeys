@@ -78,7 +78,7 @@ tile_data = PoolIntArray( 36, 13, 0, 65572, 13, 0, 196605, 13, 0, 196606, 13, 0,
 [node name="NPC" parent="." instance=ExtResource( 13 )]
 position = Vector2( 976.399, 346.816 )
 script = ExtResource( 10 )
-reference_path = "res://Niveau1/Niveau1.tscn"
+reference_path = "res://Niveau3/niveau3.tscn"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 68.4436, 282.296 )
