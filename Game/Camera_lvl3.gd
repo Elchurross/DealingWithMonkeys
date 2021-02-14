@@ -6,15 +6,9 @@ extends Camera2D
 # var b = "text"
 var old_global_pos = Vector2(171,350)
 var new_global_pos = Vector2(0,0)
-<<<<<<< HEAD
 var maxXNiveau = 10000
-var minY = 200
-var minX = -1300
-=======
-var maxXNiveau = 3467
 var minY = 365
-var minX = 171
->>>>>>> a5ec485280545a2ad3515c2c674747056d0a7d52
+var minX = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
