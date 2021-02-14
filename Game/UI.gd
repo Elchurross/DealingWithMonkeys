@@ -32,7 +32,7 @@ func _process(_delta):
 	var player = get_owner().get_node("Player")
 
 	bar.value = player.health
-	number_label_hp.text = str(player.maxHealth)
+	number_label_hp.text = str(player.health)
 	number_label_tesson.text = str(player.tesson)
 	number_label_ammo.text = str(player.ammo)
 	pass

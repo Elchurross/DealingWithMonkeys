@@ -9,7 +9,7 @@
 [ext_resource path="res://tilemapChambreKevin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://MainScene.gd" type="Script" id=9]
-[ext_resource path="res://Enemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Karim.tscn" type="PackedScene" id=10]
 [ext_resource path="res://tilesetSolChambre.tres" type="TileSet" id=11]
 [ext_resource path="res://tilesetMurChambre.tres" type="TileSet" id=12]
 [ext_resource path="res://NPC.tscn" type="PackedScene" id=13]
@@ -31,11 +31,10 @@ tile_set = ExtResource( 11 )
 tile_data = PoolIntArray( 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0 )
 
 [node name="NPC" parent="." instance=ExtResource( 13 )]
-position = Vector2( 432, 344 )
+position = Vector2( 273.08, 337.643 )
 
-[node name="Ennemy" parent="." instance=ExtResource( 10 )]
-position = Vector2( 777.888, 341.031 )
-scale = Vector2( 1.4, 1.4 )
+[node name="Karim" parent="." instance=ExtResource( 10 )]
+position = Vector2( 797.757, 334.673 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 68.4436, 282.296 )
