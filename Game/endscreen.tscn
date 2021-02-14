@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Button2.gd" type="Script" id=1]
 [ext_resource path="res://Button.gd" type="Script" id=2]
-[ext_resource path="res://LoserDetected.png" type="Texture" id=3]
+[ext_resource path="res://EndGame.png" type="Texture" id=3]
 
 [node name="Node2D" type="Node2D"]
 
@@ -14,10 +14,6 @@ color = Color( 0.12549, 0.0666667, 0.0666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="LoserDetected" type="Sprite" parent="ColorRect"]
-position = Vector2( 544, 256 )
-texture = ExtResource( 3 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = 120.0
@@ -41,3 +37,8 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="EndGame" type="Sprite" parent="."]
+position = Vector2( 502.048, 291.512 )
+scale = Vector2( 0.754412, 0.827184 )
+texture = ExtResource( 3 )
