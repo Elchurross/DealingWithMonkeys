@@ -10,7 +10,7 @@ func _init():
 	randomize()
 	speedx = rand_range(200, 300)
 	randomize()
-	speedy = rand_range(400, 550)
+	speedy = rand_range(400, 650)
 
 func _physics_process(delta):
 	var velocity = Vector2(speedx * delta, -speedy * delta)
